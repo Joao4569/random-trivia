@@ -19,7 +19,7 @@ body {
 h1 {
     font-family: 'Fredoka One', cursive;
     font-size: 5vh;
-    margin: 10vh auto 10vh auto;
+    margin: 10vh auto;
     width: 50vh;
     text-align: center;
 }
@@ -39,16 +39,20 @@ i {
     border: 5px solid #ff6600;
     width: 80vh;
     height: 40vh;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     border-radius: 30px;
     padding: 10px;
 }
 
 .intro-question {
     text-align: center;
-    margin: 5vh 0 5vh 0;
+    margin: 5vh 0;
 }
 
 .introduction {
     text-align: center;
+}
+
+.start-button {
+    margin: 5vh 0;
 }
