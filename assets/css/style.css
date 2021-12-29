@@ -7,10 +7,24 @@
     border: none;
 }
 
-body, button {
+body {
     font-family: 'Lato', sans-serif;
+    background-color: #4a154b;
+    color: #ffffff;
+    font-weight: 400;
 }
 
 h1 {
     font-family: 'Fredoka One', cursive;
+}
+
+button {
+    font-family: 'Lato', sans-serif;
+    background-color: #ff6600;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+i {
+    color: #ff6600;
 }
