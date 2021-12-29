@@ -32,3 +32,12 @@ button {
 i {
     color: #ff6600;
 }
+
+.game-area {
+    border: 5px solid #ff6600;
+    width: 80vh;
+    height: 40vh;
+    margin: 0 auto 0 auto;
+    border-radius: 30px;
+    padding: 10px;
+}
