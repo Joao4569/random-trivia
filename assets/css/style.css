@@ -12,7 +12,7 @@ body {
     background-color: #7f1181;
     color: #ffffff;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     word-spacing: 2px;
 }
 
@@ -26,9 +26,12 @@ h1 {
 
 button {
     font-family: 'Lato', sans-serif;
-    background-color: #ff6600;
-    font-weight: 400;
+    /*background-color: #ff6600;*/
+    border: 3px solid #ff6600;
+    background-color: #7f1181;
+    font-weight: 500;
     color: #ffffff;
+    border-radius: 15px;
 }
 
 i {
@@ -53,6 +56,13 @@ i {
     text-align: center;
 }
 
+.button {
+    text-align: center;
+}
+
 .start-button {
     margin: 5vh 0;
+    padding: 1vh 2vh;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
 }
