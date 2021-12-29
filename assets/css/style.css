@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #7f1181;
+    background-color: #6d026e;
     color: #ffffff;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -19,16 +19,15 @@ body {
 h1 {
     font-family: 'Fredoka One', cursive;
     font-size: 5vh;
-    margin: 10vh auto;
-    width: 50vh;
+    margin: 8% auto;
+    width: 41%;
     text-align: center;
 }
 
 button {
     font-family: 'Lato', sans-serif;
-    /*background-color: #ff6600;*/
     border: 3px solid #ff6600;
-    background-color: #7f1181;
+    background-color: #6d026e;
     font-weight: 500;
     color: #ffffff;
     border-radius: 15px;
@@ -40,8 +39,8 @@ i {
 
 .game-area {
     border: 5px solid #ff6600;
-    width: 80vh;
-    height: 40vh;
+    width: 70%;
+    height: 30%;
     margin: 0 auto;
     border-radius: 30px;
     padding: 10px;
@@ -49,7 +48,7 @@ i {
 
 .intro-question {
     text-align: center;
-    margin: 5vh 0;
+    margin: 5% 0;
 }
 
 .introduction {
@@ -61,8 +60,8 @@ i {
 }
 
 .start-button {
-    margin: 5vh 0;
-    padding: 1vh 2vh;
+    margin: 5% 0;
+    padding: 1% 2%;
     letter-spacing: 0.5px;
     word-spacing: 2px;
 }
