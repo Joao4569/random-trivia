@@ -12,6 +12,8 @@ body {
     background-color: #4a154b;
     color: #ffffff;
     font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 2px;
 }
 
 h1 {
@@ -40,4 +42,13 @@ i {
     margin: 0 auto 0 auto;
     border-radius: 30px;
     padding: 10px;
+}
+
+.intro-question {
+    text-align: center;
+    margin: 5vh 0 5vh 0;
+}
+
+.introduction {
+    text-align: center;
 }
