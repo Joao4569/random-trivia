@@ -16,6 +16,10 @@ body {
 
 h1 {
     font-family: 'Fredoka One', cursive;
+    font-size: 5vh;
+    margin: 10vh auto 10vh auto;
+    width: 50vh;
+    text-align: center;
 }
 
 button {
