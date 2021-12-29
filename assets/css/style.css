@@ -1,5 +1,16 @@
+/* gooogle fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     border: none;
+}
+
+body, button {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
 }
