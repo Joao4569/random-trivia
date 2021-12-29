@@ -25,7 +25,7 @@ h1 {
 }
 
 button {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Fredoka One', cursive;
     border: 3px solid #ff6600;
     background-color: #6d026e;
     font-weight: 500;
@@ -54,6 +54,10 @@ i {
 .introduction {
     text-align: center;
     margin: 5% 2.5%;
+}
+
+.page-name {
+    font-family: 'Fredoka One', cursive;
 }
 
 .button {
