@@ -1,5 +1,6 @@
 /* gooogle fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
 
 * {
     margin: 0;
@@ -8,7 +9,8 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif;*/
+    font-family: 'Source Sans Pro', sans-serif;
     background-color: #6d026e;
     color: #ffffff;
     font-weight: 400;
