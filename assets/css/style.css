@@ -71,3 +71,7 @@ i {
     word-spacing: 2px;
     font-size: 1.3em;
 }
+
+button:hover {
+    background-color: #ff6600;
+}
