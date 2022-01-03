@@ -1,4 +1,5 @@
-document.getElementById("start-button").addEventListener("click", function() {
+document.getElementById("start-button").addEventListener("click", function(event) {
+    event.preventDefault;
     setUsername();
 });
 
@@ -13,18 +14,16 @@ function setUsername() {
         <div>
             <p>Create a Username:</p>
             <form action="">
-            <label for="Username"></label>
-            <input type="text" id="Username" name="Username">
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Username" required>
             </form>
         </div>
         `;
     let button = document.getElementsByClassName("button");
     button[0].innerHTML = `
-        <button id="confirm-username">Done!</button>
+        <button type="submit" id="confirm-username">Done!</button>
     `;
-    document.getElementById("confirm-username").addEventListener("click", function() {
-        alert("Username Confirmed");
-    });
+    
 }
 
 function displayQuestion() {
