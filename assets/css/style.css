@@ -31,6 +31,11 @@ button {
     font-weight: 500;
     color: #ffffff;
     border-radius: 15px;
+    margin: 10% 0 0;
+    padding: 1% 2%;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    font-size: 1.3em;
 }
 
 i {
@@ -62,14 +67,6 @@ i {
 
 .button {
     text-align: center;
-}
-
-#start-button {
-    margin: 10% 0 0;
-    padding: 1% 2%;
-    letter-spacing: 0.5px;
-    word-spacing: 2px;
-    font-size: 1.3em;
 }
 
 button:hover {
