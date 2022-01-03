@@ -37,7 +37,7 @@ i {
     color: #ff6600;
 }
 
-.game-area {
+#game-area {
     border: 10px solid #ff6600;
     width: 60%;
     height: 30%;
@@ -64,7 +64,7 @@ i {
     text-align: center;
 }
 
-.start-button {
+#start-button {
     margin: 10% 0 0;
     padding: 1% 2%;
     letter-spacing: 0.5px;
