@@ -38,18 +38,25 @@ function confirmUsername() {
             username.value = "User";
         }
 
-    // Create username preview area
+    // Create username preview area and add style
     let confirmUsernameArea = document.getElementById("game-area");
     confirmUsernameArea.innerHTML = ` 
-        <p>You have selected <span class="username">${username.value}</span> as your Username</p>
+        <p>You have selected <span id="username-display">${username.value}</span> as your Username</p>
         `;
-    // Create confirmation and correction buttons
+
+    let displayUsername = document.getElementById("username-display");
+    displayUsername.style.fontFamily = "'Fredoka One', cursive";
+    displayUsername.style.textDecoration = "underline";
+
+    // Create confirmation and correction buttons, and add style
     let buttons = document.getElementsByClassName("button");
         buttons[0].innerHTML = `
             <button id="final-confirm-username" type="submit">Confirm</button>
             <button id="re-enter-username" type="submit">Try again</button>
             `;
-
+    
+    let usernameFinalConfirm = document.getElementById("final-confirm-username");
+    usernameFinalConfirm.style.marginRight = "5vw";
 }
 
 function displayQuestion() {
