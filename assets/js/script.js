@@ -28,6 +28,10 @@ function selectUsername() {
     });
 }
 
+/**
+ * This will set a generic username if none was selected by the user and create
+ * a preview window with confirmation and correction buttons.
+ */
 function confirmUsername() {
     let username = document.getElementById("username");
         if(username.value === "") { // Set username if none is provided
@@ -47,6 +51,7 @@ function confirmUsername() {
             `;
 
 }
+
 function displayQuestion() {
 
 }
