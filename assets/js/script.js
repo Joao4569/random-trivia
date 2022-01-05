@@ -4,7 +4,9 @@ document.getElementById("start-button").addEventListener("click", function(event
 });
 
 /**
- * Once the user initiates play, then the user can select a username
+ * Once the user initiates play, this will create a username input area and a button
+ * to confirm the users selection.
+ * 
  */
 function setUsername() {
     let userNameArea = document.getElementById("game-area");
@@ -20,6 +22,7 @@ function setUsername() {
     button[0].innerHTML = `
         <button id="confirm-username" type="submit">Done!</button>
     `;
+    
     
 }
 
