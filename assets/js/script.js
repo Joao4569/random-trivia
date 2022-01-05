@@ -9,10 +9,10 @@ document.getElementById("start-button").addEventListener("click", function(event
  * 
  */
 function selectUsername() {
-    let userNameArea = document.getElementById("game-area"); // Create username input area
-    userNameArea.style.width = "30%";
-    userNameArea.style.textAlign = "center";
-    userNameArea.innerHTML = `
+    let usernameArea = document.getElementById("game-area"); // Create username input area
+    usernameArea.style.width = "30%";
+    usernameArea.style.textAlign = "center";
+    usernameArea.innerHTML = `
         <form method="POST" action="">
         <label for="username">Please create a Username:</label>
         <input type="text" id="username" name="username" placeholder="Enter a username">
@@ -24,22 +24,29 @@ function selectUsername() {
     `;
     document.getElementById("confirm-username").addEventListener("click", function(event) { // listen for selection of username
         event.preventDefault;
-        let username = document.getElementById("username");
-        if(username.value === "") { // Set username if none is provided
-            username.value = "User";
-        }
-        // Create username preview area
-        userNameArea.innerHTML = ` 
-            <p>You have selected <span class="username">${username.value}</span> as your Username</p>
-            `;
-        // Create confirmation and correction buttons
-        button[0].innerHTML = `
-            <button id="final-confirm-username" type="submit">Confirm</button>
-            <button id="re-enter-username" type="submit">Try again</button>
-            `;
+        confirmUsername();
     });
 }
 
+function confirmUsername() {
+    let username = document.getElementById("username");
+        if(username.value === "") { // Set username if none is provided
+            username.value = "User";
+        }
+
+    // Create username preview area
+    let confirmUsernameArea = document.getElementById("game-area");
+    confirmUsernameArea.innerHTML = ` 
+        <p>You have selected <span class="username">${username.value}</span> as your Username</p>
+        `;
+    // Create confirmation and correction buttons
+    let buttons = document.getElementsByClassName("button");
+        buttons[0].innerHTML = `
+            <button id="final-confirm-username" type="submit">Confirm</button>
+            <button id="re-enter-username" type="submit">Try again</button>
+            `;
+
+}
 function displayQuestion() {
 
 }
