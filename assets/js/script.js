@@ -11,17 +11,14 @@ function setUsername() {
     userNameArea.style.width = "30%";
     userNameArea.style.textAlign = "center";
     userNameArea.innerHTML = `
-        <div>
-            <p>Create a Username:</p>
-            <form action="">
-            <label for="username"></label>
-            <input type="text" id="username" name="username" placeholder="Username" required>
+            <form method="POST" action="">
+            <label for="username">Please create a Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter a username">
             </form>
-        </div>
         `;
     let button = document.getElementsByClassName("button");
     button[0].innerHTML = `
-        <button type="submit" id="confirm-username">Done!</button>
+        <button id="confirm-username" type="submit">Done!</button>
     `;
     
 }
