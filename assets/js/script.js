@@ -88,11 +88,17 @@ function displayQuestion(username) {
             </form>
         </div>
         `;
+    let question = document.getElementById("question");
+    question.style.borderBottom = "5px solid #ff6600";
+    question.style.paddingBottom = "10px";
 
-        let button = document.getElementsByClassName("button");
-        button[0].innerHTML = `
-            <button id="check-answer" type="button">Check Answer</button>
-            `;
+    let form = document.getElementsByTagName("form");
+    form[0].style.paddingTop = "10px";
+
+    let button = document.getElementsByClassName("button");
+    button[0].innerHTML = `
+        <button id="check-answer" type="button">Check Answer</button>
+        `;
 }
 
 function IncrementScore() {
