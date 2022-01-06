@@ -59,6 +59,15 @@ function confirmUsername() {
     confirmUsername.style.marginRight = "5vw";
 
     // Listen for user clicks and determine next function
+    let reEnterUsername = document.getElementById("re-enter-username");
+
+    confirmUsername.addEventListener("click", function() {
+        alert("yes it works")
+    });
+
+    reEnterUsername.addEventListener("click", function () {
+        createUsername();
+    });
     
 }
 
