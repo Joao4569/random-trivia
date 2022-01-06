@@ -76,26 +76,26 @@ function selectQuestion(questionNumber) {
         {
             question: "How are you?",
             difficulty: "easy",
-            correctAnswer: "Excellent",
-            incorrectAnswers: ["bad", "ok", "so so"]
+            correctAnswer: "excellent",
+            options: ["excellent", "bad", "ok", "so so"]
         },
         {
             question : "How is the weather?",
             difficulty : "easy",
             correctAnswer : "sunny",
-            incorrectAnswers : ["rainy", "snow", "thunder"]
+            options : ["sunny", "rainy", "snow", "thunder"]
         },
         {
             question : "What color car do you have?",
             difficulty : "easy",
             correctAnswer : "blue",
-            incorrectAnswers : ["red", "yellow", "brown"]
+            options : ["blue", "red", "yellow", "brown"]
         },
         {
             question : "How many cars do you have?",
             difficulty : "easy",
             correctAnswer : 1,
-            incorrectAnswers : [2, 3, 4]
+            options : [1, 2, 3, 4]
         }
     ];
     
@@ -106,20 +106,19 @@ function displayQuestion(username, questionNumber) {
 
     let currentQuestion =  selectQuestion(questionNumber);
 
-
     let questionArea = document.getElementById("game-area");
     questionArea.innerHTML = `
     <p id="question"> ${currentQuestion.question}</p>
     <div>
         <form method="POST" action="">
         <input type="radio" id="answer1" name="answer" value="answer1">
-        <label for="answer1">answer1</label>
+        <label for="answer1">${currentQuestion.options[0]}</label>
         <input type="radio" id="answer2" name="answer" value="answer2">
-        <label for="answer2">Answer2</label><br>
+        <label for="answer2">${currentQuestion.options[1]}</label><br>
         <input type="radio" id="answer3" name="answer" value="answer3">
-        <label for="answer3">Answer3</label>
+        <label for="answer3">${currentQuestion.options[2]}</label>
         <input type="radio" id="answer4" name="answer" value="answer4">
-        <label for="answer4">answer4</label><br>
+        <label for="answer4">${currentQuestion.options[3]}</label><br>
         </form>
     </div>
     `;
