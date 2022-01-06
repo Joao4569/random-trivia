@@ -94,12 +94,17 @@ function selectQuestion(questionNumber) {
         {
             question : "How many cars do you have?",
             difficulty : "easy",
-            correctAnswer : 1,
-            options : [1, 2, 3, 4]
+            correctAnswer : "One",
+            options : ["One", "Two", "Three", "Four"]
         }
     ];
     
-    return questions[questionNumber];
+    if (questionNumber < questions.length) {
+        return questions[questionNumber];
+    } else {
+        alert("sorry no more questions for you!")
+    }
+    
 }
 
 function displayQuestion(username, questionNumber) {
@@ -111,13 +116,13 @@ function displayQuestion(username, questionNumber) {
     <p id="question"> ${currentQuestion.question}</p>
     <div>
         <form method="POST" action="">
-        <input type="radio" id="answer1" name="answer" value="answer1">
+        <input type="radio" id="answer1" name="answer" value="${currentQuestion.options[0]}">
         <label for="answer1">${currentQuestion.options[0]}</label>
-        <input type="radio" id="answer2" name="answer" value="answer2">
+        <input type="radio" id="answer2" name="answer" value="${currentQuestion.options[1]}">
         <label for="answer2">${currentQuestion.options[1]}</label><br>
-        <input type="radio" id="answer3" name="answer" value="answer3">
+        <input type="radio" id="answer3" name="answer" value="${currentQuestion.options[2]}">
         <label for="answer3">${currentQuestion.options[2]}</label>
-        <input type="radio" id="answer4" name="answer" value="answer4">
+        <input type="radio" id="answer4" name="answer" value="${currentQuestion.options[3]}">
         <label for="answer4">${currentQuestion.options[3]}</label><br>
         </form>
     </div>
@@ -138,6 +143,32 @@ function displayQuestion(username, questionNumber) {
     let waitForConfirmation = document.getElementById("check-answer");
     waitForConfirmation.addEventListener("click", function() {
 
+        let answer1 = document.getElementById("answer1");
+        let answer2 = document.getElementById("answer2");
+        let answer3 = document.getElementById("answer3");
+        let answer4 = document.getElementById("answer4");
+
+        let selectedAnswer = "";
+
+        if (answer1.checked) {
+            selectedAnswer = answer1.getAttribute("value");
+        } else if (answer2.checked) {
+            selectedAnswer = answer2.getAttribute("value");
+        } else if (answer3.checked) {
+            selectedAnswer = answer3.getAttribute("value");
+        } else if (answer4.checked) {
+            selectedAnswer = answer4.getAttribute("value");
+        } else {
+            alert("Please select an answer")
+        }
+
+        if (selectedAnswer === currentQuestion.correctAnswer) {
+            alert("You answered correctly!");
+            let newQuestionNumber = questionNumber + 1;
+            displayQuestion(username, newQuestionNumber);
+        } else {
+            alert("Incorrect!!!" + selectedAnswer);
+        }
     });
 
    
