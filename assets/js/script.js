@@ -142,32 +142,13 @@ function displayQuestion(username, questionNumber) {
 
     let waitForConfirmation = document.getElementById("check-answer");
     waitForConfirmation.addEventListener("click", function() {
-
-        let answer1 = document.getElementById("answer1");
-        let answer2 = document.getElementById("answer2");
-        let answer3 = document.getElementById("answer3");
-        let answer4 = document.getElementById("answer4");
-
-        let selectedAnswer = "";
-
-        if (answer1.checked) {
-            selectedAnswer = answer1.getAttribute("value");
-        } else if (answer2.checked) {
-            selectedAnswer = answer2.getAttribute("value");
-        } else if (answer3.checked) {
-            selectedAnswer = answer3.getAttribute("value");
-        } else if (answer4.checked) {
-            selectedAnswer = answer4.getAttribute("value");
-        } else {
-            alert("Please select an answer")
-        }
-
-        if (selectedAnswer === currentQuestion.correctAnswer) {
+        
+        if (checkAnswer() === currentQuestion.correctAnswer) {
             alert("You answered correctly!");
             let newQuestionNumber = questionNumber + 1;
             displayQuestion(username, newQuestionNumber);
         } else {
-            alert("Incorrect!!!" + selectedAnswer);
+            alert("Incorrect!!!");
         }
     });
 
@@ -181,5 +162,25 @@ function IncrementScore() {
 
 function checkAnswer() {
 
+    let answer1 = document.getElementById("answer1");
+    let answer2 = document.getElementById("answer2");
+    let answer3 = document.getElementById("answer3");
+    let answer4 = document.getElementById("answer4");
+
+    let selectedAnswer = "";
+
+    if (answer1.checked) {
+        return answer1.getAttribute("value");
+    } else if (answer2.checked) {
+        return answer2.getAttribute("value");
+    } else if (answer3.checked) {
+        return answer3.getAttribute("value");
+    } else if (answer4.checked) {
+        return answer4.getAttribute("value");
+    } else {
+        alert("Please select an answer")
+    }
+
+    
 }
 
