@@ -62,7 +62,7 @@ function confirmUsername() {
     let reEnterUsername = document.getElementById("re-enter-username");
 
     confirmUsername.addEventListener("click", function() {
-        alert("yes it works")
+        displayQuestion(username.value);
     });
 
     reEnterUsername.addEventListener("click", function () {
@@ -71,8 +71,28 @@ function confirmUsername() {
     
 }
 
-function displayQuestion() {
+function displayQuestion(username) {
+    let questionArea = document.getElementById("game-area"); // Create Question area
+    questionArea.innerHTML = `
+        <p id="question">Question SetValue : SetValue</p>
+        <div>
+            <form method="POST" action="">
+            <input type="radio" id="question1" name="answer" value="question1">
+            <label for="question1"> Question1</label>
+            <input type="radio" id="question2" name="answer" value="question2">
+            <label for="question2"> Question2</label><br>
+            <input type="radio" id="question3" name="answer" value="question3">
+            <label for="question3"> Question3</label>
+            <input type="radio" id="question4" name="answer" value="question4">
+            <label for="question4"> Question4</label><br>
+            </form>
+        </div>
+        `;
 
+        let button = document.getElementsByClassName("button");
+        button[0].innerHTML = `
+            <button id="check-answer" type="button">Check Answer</button>
+            `;
 }
 
 function IncrementScore() {
