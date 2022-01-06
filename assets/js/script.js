@@ -72,6 +72,34 @@ function confirmUsername() {
 }
 
 function displayQuestion(username) {
+
+    let questions = [
+        {
+            "question" : "How are you",
+            "difficulty" : "easy",
+            "correct-answer" : "Excellent",
+            "incorrect-answers" : ["bad", "ok", "so so"]
+        },
+        {
+            "question" : "How is the weather",
+            "difficulty" : "easy",
+            "correct-answer" : "sunny",
+            "incorrect-answers" : ["rainy", "snow", "thunder"]
+        },
+        {
+            "question" : "What color car do you have",
+            "difficulty" : "easy",
+            "correct-answer" : "blue",
+            "incorrect-answers" : ["red", "yellow", "brown"]
+        },
+        {
+            "question" : "How many cars do you have",
+            "difficulty" : "easy",
+            "correct-answer" : "1",
+            "incorrect-answers" : ["2", "3", "4"]
+        }
+    ];
+
     let questionArea = document.getElementById("game-area"); // Create Question area
     questionArea.innerHTML = `
         <p id="question">Question SetValue : SetValue</p>
