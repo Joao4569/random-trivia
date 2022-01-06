@@ -62,7 +62,7 @@ function confirmUsername() {
     let reEnterUsername = document.getElementById("re-enter-username");
 
     confirmUsername.addEventListener("click", function() {
-        displayQuestion(username.value);
+        displayQuestion(username.value, 0);
     });
 
     reEnterUsername.addEventListener("click", function () {
@@ -71,62 +71,78 @@ function confirmUsername() {
     
 }
 
-function displayQuestion(username) {
-
+function selectQuestion(questionNumber) {
     let questions = [
         {
-            "question" : "How are you",
-            "difficulty" : "easy",
-            "correct-answer" : "Excellent",
-            "incorrect-answers" : ["bad", "ok", "so so"]
+            question: "How are you?",
+            difficulty: "easy",
+            correctAnswer: "Excellent",
+            incorrectAnswers: ["bad", "ok", "so so"]
         },
         {
-            "question" : "How is the weather",
-            "difficulty" : "easy",
-            "correct-answer" : "sunny",
-            "incorrect-answers" : ["rainy", "snow", "thunder"]
+            question : "How is the weather?",
+            difficulty : "easy",
+            correctAnswer : "sunny",
+            incorrectAnswers : ["rainy", "snow", "thunder"]
         },
         {
-            "question" : "What color car do you have",
-            "difficulty" : "easy",
-            "correct-answer" : "blue",
-            "incorrect-answers" : ["red", "yellow", "brown"]
+            question : "What color car do you have?",
+            difficulty : "easy",
+            correctAnswer : "blue",
+            incorrectAnswers : ["red", "yellow", "brown"]
         },
         {
-            "question" : "How many cars do you have",
-            "difficulty" : "easy",
-            "correct-answer" : "1",
-            "incorrect-answers" : ["2", "3", "4"]
+            question : "How many cars do you have?",
+            difficulty : "easy",
+            correctAnswer : 1,
+            incorrectAnswers : [2, 3, 4]
         }
     ];
+    
+    return questions[questionNumber];
+}
 
-    let questionArea = document.getElementById("game-area"); // Create Question area
+function displayQuestion(username, questionNumber) {
+
+    let currentQuestion =  selectQuestion(questionNumber);
+
+
+    let questionArea = document.getElementById("game-area");
     questionArea.innerHTML = `
-        <p id="question">Question SetValue : SetValue</p>
-        <div>
-            <form method="POST" action="">
-            <input type="radio" id="question1" name="answer" value="question1">
-            <label for="question1"> Question1</label>
-            <input type="radio" id="question2" name="answer" value="question2">
-            <label for="question2"> Question2</label><br>
-            <input type="radio" id="question3" name="answer" value="question3">
-            <label for="question3"> Question3</label>
-            <input type="radio" id="question4" name="answer" value="question4">
-            <label for="question4"> Question4</label><br>
-            </form>
-        </div>
-        `;
+    <p id="question"> ${currentQuestion.question}</p>
+    <div>
+        <form method="POST" action="">
+        <input type="radio" id="answer1" name="answer" value="answer1">
+        <label for="answer1">answer1</label>
+        <input type="radio" id="answer2" name="answer" value="answer2">
+        <label for="answer2">Answer2</label><br>
+        <input type="radio" id="answer3" name="answer" value="answer3">
+        <label for="answer3">Answer3</label>
+        <input type="radio" id="answer4" name="answer" value="answer4">
+        <label for="answer4">answer4</label><br>
+        </form>
+    </div>
+    `;
+
     let question = document.getElementById("question");
     question.style.borderBottom = "5px solid #ff6600";
     question.style.paddingBottom = "10px";
-
+    
     let form = document.getElementsByTagName("form");
     form[0].style.paddingTop = "10px";
-
+    
     let button = document.getElementsByClassName("button");
     button[0].innerHTML = `
         <button id="check-answer" type="button">Check Answer</button>
         `;
+
+    let waitForConfirmation = document.getElementById("check-answer");
+    waitForConfirmation.addEventListener("click", function() {
+
+    });
+
+   
+    
 }
 
 function IncrementScore() {
