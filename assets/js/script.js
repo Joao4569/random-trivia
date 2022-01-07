@@ -116,6 +116,7 @@ function selectQuestion(questionNumber) {
 function displayQuestion(username, questionNumber) {
 
     let currentQuestion =  selectQuestion(questionNumber);
+    displayUsername(username);
 
     let questionArea = document.getElementById("game-area"); // Display the game question
     questionArea.innerHTML = `
@@ -152,7 +153,7 @@ function displayQuestion(username, questionNumber) {
         if (checkAnswer() === currentQuestion.correctAnswer) {
             alert("You answered correctly!");
             let newQuestionNumber = questionNumber + 1;
-            displayQuestion(username, newQuestionNumber);
+            displayQuestion(newQuestionNumber);
         } else {
             alert("Incorrect!!!");
         }
@@ -162,8 +163,28 @@ function displayQuestion(username, questionNumber) {
     
 }
 
-function IncrementScore() {
+function displayUsername(username) {
+    
+    let displayUsername = document.createElement("span");
+    displayUsername.setAttribute("class", "logo-style");
+    displayUsername.innerHTML = `${username}`;
+    displayUsername.style.float = "left";
+    displayUsername.style.marginTop = "10%";
+    displayUsername.style.marginLeft = "20%";
 
+    let body = document.body;
+    body.appendChild(displayUsername);    
+    
+}
+
+function incrementScore() {
+    let displayScore = document.createElement("span");
+    displayScore.setAttribute("id", "float-right");
+    displayScore.innerHTML = `Display Score Here:`;
+    displayScore.style.float = "right";
+
+    let body = document.body;
+    body.appendChild(displayScore);
 }
 
 /**
@@ -175,8 +196,6 @@ function checkAnswer() {
     let answer2 = document.getElementById("answer2");
     let answer3 = document.getElementById("answer3");
     let answer4 = document.getElementById("answer4");
-
-    let selectedAnswer = "";
 
     if (answer1.checked) {
         return answer1.getAttribute("value");
