@@ -35,7 +35,7 @@ function createUsername() {
 function confirmUsername() {
     let username = document.getElementById("username");
         if(username.value === "") { // Set username if none is provided
-            username.value = "User";
+            username.value = "User 1";
         }
 
     // Create username preview area and add style
@@ -45,8 +45,8 @@ function confirmUsername() {
         `;
 
     let displayUsername = document.getElementById("username-display");
-    displayUsername.style.fontFamily = "'Fredoka One', cursive";
-    displayUsername.style.textDecoration = "underline";
+    displayUsername.setAttribute("class", "logo-style");
+    
 
     // Create confirmation and correction buttons, and add style
     let button = document.getElementsByClassName("button");
@@ -62,12 +62,74 @@ function confirmUsername() {
     let reEnterUsername = document.getElementById("re-enter-username");
 
     confirmUsername.addEventListener("click", function() {
-        displayQuestion(username.value, 0);
+        displayQuestion(username.value, 0, 0);
     });
 
     reEnterUsername.addEventListener("click", function () {
         createUsername();
     });
+    
+}
+
+/**
+ * This will display the given question and display if the answer is correct or not
+*/
+function displayQuestion(username, questionNumber, correctScore) {
+
+    let currentQuestion =  selectQuestion(questionNumber);
+
+    let questionArea = document.getElementById("game-area"); // Display the game question
+    questionArea.innerHTML = `
+    <p id="question"> ${currentQuestion.question}</p>
+    <div>
+        <form method="POST" action="">
+        <input type="radio" id="answer1" name="answer" value="${currentQuestion.options[0]}">
+        <label for="answer1">${currentQuestion.options[0]}</label>
+        <input type="radio" id="answer2" name="answer" value="${currentQuestion.options[1]}">
+        <label for="answer2">${currentQuestion.options[1]}</label><br>
+        <input type="radio" id="answer3" name="answer" value="${currentQuestion.options[2]}">
+        <label for="answer3">${currentQuestion.options[2]}</label>
+        <input type="radio" id="answer4" name="answer" value="${currentQuestion.options[3]}">
+        <label for="answer4">${currentQuestion.options[3]}</label><br>
+        </form>
+    </div>
+    `;
+
+    let question = document.getElementById("question"); // Style the game question
+    question.style.borderBottom = "5px solid #ff6600";
+    question.style.paddingBottom = "10px";
+    
+    let form = document.getElementsByTagName("form");
+    form[0].style.paddingTop = "10px";
+    
+    let button = document.getElementsByClassName("button");
+    button[0].innerHTML = `
+        <p id="display-username" class="logo-style">
+            ${username}
+        </p>
+        <p>
+            Score ${correctScore} / ${questionNumber + 1}
+        </p>
+        <button id="check-answer" type="button">Check Answer</button>
+        `;
+
+    let displayedUsername = document.getElementById("display-username");
+    displayedUsername.style.marginTop = "5%";
+
+    let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
+    waitForConfirmation.addEventListener("click", function() {
+        
+        if (checkAnswer() === currentQuestion.correctAnswer) {
+            alert("You answered correctly!");
+            let newQuestionNumber = questionNumber + 1;
+            let newCorrectScore = correctScore + 1;
+            displayQuestion(username, newQuestionNumber, newCorrectScore);
+        } else {
+            alert("Incorrect!!!");
+        }
+    });
+
+   
     
 }
 
@@ -108,83 +170,6 @@ function selectQuestion(questionNumber) {
         alert("sorry no more questions for you!")
     }
     
-}
-
-/**
- * This will display the given question and display if the answer is correct or not
-*/
-function displayQuestion(username, questionNumber) {
-
-    let currentQuestion =  selectQuestion(questionNumber);
-    displayUsername(username);
-
-    let questionArea = document.getElementById("game-area"); // Display the game question
-    questionArea.innerHTML = `
-    <p id="question"> ${currentQuestion.question}</p>
-    <div>
-        <form method="POST" action="">
-        <input type="radio" id="answer1" name="answer" value="${currentQuestion.options[0]}">
-        <label for="answer1">${currentQuestion.options[0]}</label>
-        <input type="radio" id="answer2" name="answer" value="${currentQuestion.options[1]}">
-        <label for="answer2">${currentQuestion.options[1]}</label><br>
-        <input type="radio" id="answer3" name="answer" value="${currentQuestion.options[2]}">
-        <label for="answer3">${currentQuestion.options[2]}</label>
-        <input type="radio" id="answer4" name="answer" value="${currentQuestion.options[3]}">
-        <label for="answer4">${currentQuestion.options[3]}</label><br>
-        </form>
-    </div>
-    `;
-
-    let question = document.getElementById("question"); // Style the game question
-    question.style.borderBottom = "5px solid #ff6600";
-    question.style.paddingBottom = "10px";
-    
-    let form = document.getElementsByTagName("form");
-    form[0].style.paddingTop = "10px";
-    
-    let button = document.getElementsByClassName("button");
-    button[0].innerHTML = `
-        <button id="check-answer" type="button">Check Answer</button>
-        `;
-
-    let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
-    waitForConfirmation.addEventListener("click", function() {
-        
-        if (checkAnswer() === currentQuestion.correctAnswer) {
-            alert("You answered correctly!");
-            let newQuestionNumber = questionNumber + 1;
-            displayQuestion(newQuestionNumber);
-        } else {
-            alert("Incorrect!!!");
-        }
-    });
-
-   
-    
-}
-
-function displayUsername(username) {
-    
-    let displayUsername = document.createElement("span");
-    displayUsername.setAttribute("class", "logo-style");
-    displayUsername.innerHTML = `${username}`;
-    displayUsername.style.float = "left";
-    displayUsername.style.marginTop = "10%";
-    displayUsername.style.marginLeft = "20%";
-
-    let body = document.body;
-    body.appendChild(displayUsername);    
-    
-}
-
-function incrementScore() {
-    let displayScore = document.createElement("span");
-    displayScore.setAttribute("id", "float-right");
-    displayScore.innerHTML = `Display Score Here:`;
-    displayScore.style.float = "right";
-
-    let body = document.body;
-    body.appendChild(displayScore);
 }
 
 /**
