@@ -52,7 +52,7 @@ function confirmUsername() {
     let button = document.getElementsByClassName("button");
         button[0].innerHTML = `
             <button id="final-confirm-username" type="submit">Confirm</button>
-            <button id="re-enter-username" type="submit">Try again</button>
+            <button id="re-enter-username" type="submit">Re-Enter</button>
             `;
     
     let confirmUsername = document.getElementById("final-confirm-username");
@@ -61,11 +61,13 @@ function confirmUsername() {
     // Listen for user clicks and determine next function
     let reEnterUsername = document.getElementById("re-enter-username");
 
-    confirmUsername.addEventListener("click", function() {
+    confirmUsername.addEventListener("click", function(event) {
+        event.preventDefault;
         selectTopic(username.value);
     });
 
-    reEnterUsername.addEventListener("click", function () {
+    reEnterUsername.addEventListener("click", function (event) {
+        event.preventDefault;
         createUsername();
     });
     
@@ -122,7 +124,8 @@ function displayQuestion(topic, username, questionNumber, correctScore) {
     displayedScore.style.marginTop = "2%";
 
     let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
-    waitForConfirmation.addEventListener("click", function() {
+    waitForConfirmation.addEventListener("click", function(event) {
+        event.preventDefault;
         
         if (checkAnswer() === currentQuestion.correctAnswer) {
             alert("You answered correctly!");
@@ -212,7 +215,7 @@ function checkAnswer() {
 function selectTopic(username) {
     let chooseTopic = document.getElementById("game-area");
     chooseTopic.innerHTML = `
-        <p>
+        <p class="logo-style">
             Which Topic are you interested in ${username} ?
         </p>
     `;
@@ -233,15 +236,18 @@ function selectTopic(username) {
     let science = document.getElementById("science");
     let scienceAsTopic = science.getAttribute("id");
 
-    movies.addEventListener("click", function() {
+    movies.addEventListener("click", function(event) {
+        event.preventDefault;
         displayQuestion(moviesAsTopic, username, 0, 0)
     });
 
-    generalKnowledge.addEventListener("click", function() {
+    generalKnowledge.addEventListener("click", function(event) {
+        event.preventDefault;
         displayQuestion(generalKnowledgeAsTopic, username, 0, 0);
     });
 
-    science.addEventListener("click", function() {
+    science.addEventListener("click", function(event) {
+        event.preventDefault;
         displayQuestion(scienceAsTopic, username, 0, 0)
     });
 }
