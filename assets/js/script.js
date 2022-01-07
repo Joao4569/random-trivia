@@ -76,7 +76,7 @@ function confirmUsername() {
 /**
  * This will display the given question and display if the answer is correct or not
 */
-function displayQuestion(topic, username, questionNumber, correctScore) {
+function displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore) {
     
 
     let currentQuestion =  selectQuestion(topic, questionNumber);
@@ -112,7 +112,7 @@ function displayQuestion(topic, username, questionNumber, correctScore) {
             ${username}
         </p>
         <p id="display-score" class="logo-style">
-            Score ${correctScore} / ${questionNumber}
+            Correct Answers: ${correctScore} / Incorrect Answers: ${inCorrectScore}
         </p>
         <button id="check-answer" type="button">Check Answer</button>
         `;
@@ -128,12 +128,15 @@ function displayQuestion(topic, username, questionNumber, correctScore) {
         event.preventDefault;
         
         if (checkAnswer() === currentQuestion.correctAnswer) {
-            alert("You answered correctly!");
-            let newQuestionNumber = questionNumber + 1;
-            let newCorrectScore = correctScore + 1;
-            displayQuestion(topic, username, newQuestionNumber, newCorrectScore);
+            alert(`Well done ${username}`);
+            questionNumber++ ;
+            correctScore++;
+            displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
         } else {
             alert("Incorrect!!!");
+            questionNumber++;
+            inCorrectScore++;
+            displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
         }
     });
 
@@ -148,7 +151,7 @@ function selectQuestion(selectedTopic, questionNumber) {
     let questions = [
         {
             question: "How are you?",
-            topic: "movies",
+            topic: "general-knowledge",
             correctAnswer: "excellent",
             options: ["ok", "bad", "excellent", "so so"]
         },
@@ -215,8 +218,8 @@ function checkAnswer() {
 function selectTopic(username) {
     let chooseTopic = document.getElementById("game-area");
     chooseTopic.innerHTML = `
-        <p class="logo-style">
-            Which Topic are you interested in ${username} ?
+        <p>
+            Which Topic are you interested in <span class="logo-style">${username}</span>?
         </p>
     `;
 
@@ -238,17 +241,17 @@ function selectTopic(username) {
 
     movies.addEventListener("click", function(event) {
         event.preventDefault;
-        displayQuestion(moviesAsTopic, username, 0, 0)
+        displayQuestion(moviesAsTopic, username, 0, 0, 0)
     });
 
     generalKnowledge.addEventListener("click", function(event) {
         event.preventDefault;
-        displayQuestion(generalKnowledgeAsTopic, username, 0, 0);
+        displayQuestion(generalKnowledgeAsTopic, username, 0, 0, 0);
     });
 
     science.addEventListener("click", function(event) {
         event.preventDefault;
-        displayQuestion(scienceAsTopic, username, 0, 0)
+        displayQuestion(scienceAsTopic, username, 0, 0, 0)
     });
 }
 
