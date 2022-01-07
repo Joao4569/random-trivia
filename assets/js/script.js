@@ -186,7 +186,7 @@ function selectQuestion(selectedTopic, questionNumber) {
     if (questionNumber < questionsByTopic.length) { // Check if there is no more questions
         return questionsByTopic[questionNumber];
     } else if (questionNumber === questionsByTopic.length) {
-        alert("sorry no more questions for you!")
+        alert("sorry no more questions for you!");
     }
     
 }
