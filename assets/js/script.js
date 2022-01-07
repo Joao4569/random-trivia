@@ -75,6 +75,7 @@ function confirmUsername() {
  * This will display the given question and display if the answer is correct or not
 */
 function displayQuestion(topic, username, questionNumber, correctScore) {
+    
 
     let currentQuestion =  selectQuestion(topic, questionNumber);
 
@@ -127,7 +128,7 @@ function displayQuestion(topic, username, questionNumber, correctScore) {
             alert("You answered correctly!");
             let newQuestionNumber = questionNumber + 1;
             let newCorrectScore = correctScore + 1;
-            displayQuestion(username, newQuestionNumber, newCorrectScore);
+            displayQuestion(topic, username, newQuestionNumber, newCorrectScore);
         } else {
             alert("Incorrect!!!");
         }
@@ -140,36 +141,43 @@ function displayQuestion(topic, username, questionNumber, correctScore) {
 /** 
  * This will return a question object given the supplied question number
  */
-function selectQuestion(topic, questionNumber) {
+function selectQuestion(selectedTopic, questionNumber) {
     let questions = [
         {
             question: "How are you?",
-            difficulty: "easy",
+            topic: "movies",
             correctAnswer: "excellent",
             options: ["ok", "bad", "excellent", "so so"]
         },
         {
             question : "How is the weather?",
-            difficulty : "easy",
+            topic : "science",
             correctAnswer : "sunny",
             options : ["rainy", "sunny", "snow", "thunder"]
         },
         {
             question : "What color car do you have?",
-            difficulty : "easy",
+            topic : "general-knowledge",
             correctAnswer : "blue",
             options : ["blue", "red", "yellow", "brown"]
         },
         {
             question : "How many cars do you have?",
-            difficulty : "easy",
+            topic : "general-knowledge",
             correctAnswer : "One",
             options : ["One", "Two", "Three", "Four"]
         }
     ];
     
-    if (questionNumber < questions.length) { // Check if there is no more questions
-        return questions[questionNumber];
+    let questionsByTopic = [];
+    for (let question of questions) {
+        if (question.topic === selectedTopic) {
+            questionsByTopic.push(question);
+        }
+    }
+
+    if (questionNumber < questionsByTopic.length) { // Check if there is no more questions
+        return questionsByTopic[questionNumber];
     } else {
         alert("sorry no more questions for you!")
     }
@@ -217,19 +225,24 @@ function selectTopic(username) {
         `;
 
     let movies = document.getElementById("movies");
+    let moviesAsTopic = movies.getAttribute("id");
+
     let generalKnowledge = document.getElementById("general-knowledge");
+    let generalKnowledgeAsTopic = generalKnowledge.getAttribute("id");
+
     let science = document.getElementById("science");
+    let scienceAsTopic = science.getAttribute("id");
 
     movies.addEventListener("click", function() {
-        displayQuestion(movies.getAttribute("id"), username, 0, 0)
+        displayQuestion(moviesAsTopic, username, 0, 0)
     });
 
     generalKnowledge.addEventListener("click", function() {
-        displayQuestion(generalKnowledge.getAttribute("id"), username, 0, 0)
+        displayQuestion(generalKnowledgeAsTopic, username, 0, 0);
     });
 
     science.addEventListener("click", function() {
-        displayQuestion(science.getAttribute("id"), username, 0, 0)
+        displayQuestion(scienceAsTopic, username, 0, 0)
     });
 }
 
