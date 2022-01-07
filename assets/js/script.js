@@ -84,11 +84,11 @@ function displayQuestion(username, questionNumber, correctScore) {
     <div>
         <form method="POST" action="">
         <input type="radio" id="answer1" name="answer" value="${currentQuestion.options[0]}">
-        <label for="answer1">${currentQuestion.options[0]}</label>
+        <label for="answer1">${currentQuestion.options[0]}</label><br>
         <input type="radio" id="answer2" name="answer" value="${currentQuestion.options[1]}">
         <label for="answer2">${currentQuestion.options[1]}</label><br>
         <input type="radio" id="answer3" name="answer" value="${currentQuestion.options[2]}">
-        <label for="answer3">${currentQuestion.options[2]}</label>
+        <label for="answer3">${currentQuestion.options[2]}</label><br>
         <input type="radio" id="answer4" name="answer" value="${currentQuestion.options[3]}">
         <label for="answer4">${currentQuestion.options[3]}</label><br>
         </form>
@@ -101,6 +101,7 @@ function displayQuestion(username, questionNumber, correctScore) {
     
     let form = document.getElementsByTagName("form");
     form[0].style.paddingTop = "10px";
+    form[0].style.textAlign = "left";
     
     let button = document.getElementsByClassName("button");
     button[0].innerHTML = `
