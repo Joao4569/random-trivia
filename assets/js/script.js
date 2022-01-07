@@ -1,6 +1,6 @@
 document.getElementById("start-button").addEventListener("click", function(event) {
     event.preventDefault;
-    createUsername();
+    createUsernameArea();
 });
 
 /**
@@ -8,7 +8,7 @@ document.getElementById("start-button").addEventListener("click", function(event
  * to confirm the users selection.
  * 
  */
-function createUsername() {
+function createUsernameArea() {
     let usernameArea = document.getElementById("game-area"); // Create username input area
     usernameArea.style.width = "30%";
     usernameArea.style.textAlign = "center";
@@ -35,7 +35,8 @@ function createUsername() {
 function confirmUsername() {
     let username = document.getElementById("username");
         if(username.value === "") { // Set username if none is provided
-            username.value = "User 1";
+            alert("You have nit entered a usename, Player 1 is the default");
+            username.value = "Player 1";
         }
 
     // Create username preview area and add style
@@ -68,7 +69,7 @@ function confirmUsername() {
 
     reEnterUsername.addEventListener("click", function (event) {
         event.preventDefault;
-        createUsername();
+        createUsernameArea();
     });
     
 }
@@ -133,7 +134,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
             correctScore++;
             displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
         } else {
-            alert("Incorrect!!!");
+            alert(`Unfortunately you are incorrect, the correct answer was "${currentQuestion.correctAnswer}".`);
             questionNumber++;
             inCorrectScore++;
             displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
@@ -184,7 +185,7 @@ function selectQuestion(selectedTopic, questionNumber) {
 
     if (questionNumber < questionsByTopic.length) { // Check if there is no more questions
         return questionsByTopic[questionNumber];
-    } else {
+    } else if (questionNumber === questionsByTopic.length) {
         alert("sorry no more questions for you!")
     }
     
