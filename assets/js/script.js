@@ -107,14 +107,17 @@ function displayQuestion(username, questionNumber, correctScore) {
         <p id="display-username" class="logo-style">
             ${username}
         </p>
-        <p>
+        <p id="display-score" class="logo-style">
             Score ${correctScore} / ${questionNumber + 1}
         </p>
         <button id="check-answer" type="button">Check Answer</button>
         `;
 
     let displayedUsername = document.getElementById("display-username");
-    displayedUsername.style.marginTop = "5%";
+    displayedUsername.style.marginTop = "2%";
+
+    let displayedScore = document.getElementById("display-score");
+    displayedScore.style.marginTop = "2%";
 
     let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
     waitForConfirmation.addEventListener("click", function() {
