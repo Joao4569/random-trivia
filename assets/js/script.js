@@ -71,6 +71,9 @@ function confirmUsername() {
     
 }
 
+/** 
+ * This will return a question object given the supplied question number
+ */
 function selectQuestion(questionNumber) {
     let questions = [
         {
@@ -99,7 +102,7 @@ function selectQuestion(questionNumber) {
         }
     ];
     
-    if (questionNumber < questions.length) {
+    if (questionNumber < questions.length) { // Check if there is no more questions
         return questions[questionNumber];
     } else {
         alert("sorry no more questions for you!")
@@ -107,11 +110,14 @@ function selectQuestion(questionNumber) {
     
 }
 
+/**
+ * This will display the given question and display if the answer is correct or not
+*/
 function displayQuestion(username, questionNumber) {
 
     let currentQuestion =  selectQuestion(questionNumber);
 
-    let questionArea = document.getElementById("game-area");
+    let questionArea = document.getElementById("game-area"); // Display the game question
     questionArea.innerHTML = `
     <p id="question"> ${currentQuestion.question}</p>
     <div>
@@ -128,7 +134,7 @@ function displayQuestion(username, questionNumber) {
     </div>
     `;
 
-    let question = document.getElementById("question");
+    let question = document.getElementById("question"); // Style the game question
     question.style.borderBottom = "5px solid #ff6600";
     question.style.paddingBottom = "10px";
     
@@ -140,7 +146,7 @@ function displayQuestion(username, questionNumber) {
         <button id="check-answer" type="button">Check Answer</button>
         `;
 
-    let waitForConfirmation = document.getElementById("check-answer");
+    let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
     waitForConfirmation.addEventListener("click", function() {
         
         if (checkAnswer() === currentQuestion.correctAnswer) {
@@ -160,6 +166,9 @@ function IncrementScore() {
 
 }
 
+/**
+ * This will check which answer was selected and return its' value.
+  */
 function checkAnswer() {
 
     let answer1 = document.getElementById("answer1");
