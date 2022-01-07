@@ -62,7 +62,7 @@ function confirmUsername() {
     let reEnterUsername = document.getElementById("re-enter-username");
 
     confirmUsername.addEventListener("click", function() {
-        displayQuestion(username.value, 0, 0);
+        selectTopic(username.value);
     });
 
     reEnterUsername.addEventListener("click", function () {
@@ -74,9 +74,9 @@ function confirmUsername() {
 /**
  * This will display the given question and display if the answer is correct or not
 */
-function displayQuestion(username, questionNumber, correctScore) {
+function displayQuestion(topic, username, questionNumber, correctScore) {
 
-    let currentQuestion =  selectQuestion(questionNumber);
+    let currentQuestion =  selectQuestion(topic, questionNumber);
 
     let questionArea = document.getElementById("game-area"); // Display the game question
     questionArea.innerHTML = `
@@ -109,7 +109,7 @@ function displayQuestion(username, questionNumber, correctScore) {
             ${username}
         </p>
         <p id="display-score" class="logo-style">
-            Score ${correctScore} / ${questionNumber + 1}
+            Score ${correctScore} / ${questionNumber}
         </p>
         <button id="check-answer" type="button">Check Answer</button>
         `;
@@ -140,19 +140,19 @@ function displayQuestion(username, questionNumber, correctScore) {
 /** 
  * This will return a question object given the supplied question number
  */
-function selectQuestion(questionNumber) {
+function selectQuestion(topic, questionNumber) {
     let questions = [
         {
             question: "How are you?",
             difficulty: "easy",
             correctAnswer: "excellent",
-            options: ["excellent", "bad", "ok", "so so"]
+            options: ["ok", "bad", "excellent", "so so"]
         },
         {
             question : "How is the weather?",
             difficulty : "easy",
             correctAnswer : "sunny",
-            options : ["sunny", "rainy", "snow", "thunder"]
+            options : ["rainy", "sunny", "snow", "thunder"]
         },
         {
             question : "What color car do you have?",
@@ -199,5 +199,37 @@ function checkAnswer() {
     }
 
     
+}
+
+function selectTopic(username) {
+    let chooseTopic = document.getElementById("game-area");
+    chooseTopic.innerHTML = `
+        <p>
+            Which Topic are you interested in ${username} ?
+        </p>
+    `;
+
+    let button = document.getElementsByClassName("button");
+    button[0].innerHTML = `
+        <button id="movies" type="submit">Movies</button>
+        <button id="general-knowledge" type="submit">General Knowledge</button>
+        <button id="science" type="submit">Science</button>
+        `;
+
+    let movies = document.getElementById("movies");
+    let generalKnowledge = document.getElementById("general-knowledge");
+    let science = document.getElementById("science");
+
+    movies.addEventListener("click", function() {
+        displayQuestion(movies.getAttribute("id"), username, 0, 0)
+    });
+
+    generalKnowledge.addEventListener("click", function() {
+        displayQuestion(generalKnowledge.getAttribute("id"), username, 0, 0)
+    });
+
+    science.addEventListener("click", function() {
+        displayQuestion(science.getAttribute("id"), username, 0, 0)
+    });
 }
 
