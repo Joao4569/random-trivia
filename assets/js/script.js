@@ -80,7 +80,7 @@ function confirmUsername() {
 function displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore) {
     
 
-    let currentQuestion =  selectQuestion(topic, questionNumber, correctScore);
+    let currentQuestion =  selectQuestion(topic, questionNumber, correctScore, username);
 
     let questionArea = document.getElementById("game-area"); // Display the game question
     questionArea.innerHTML = `
@@ -148,7 +148,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
 /** 
  * This will return a question object given the supplied question number
  */
-function selectQuestion(selectedTopic, questionNumber, correctScore) {
+function selectQuestion(selectedTopic, questionNumber, correctScore, username) {
     let questions = [
         {
             question: "How are you?",
@@ -186,8 +186,7 @@ function selectQuestion(selectedTopic, questionNumber, correctScore) {
     if (questionNumber < questionsByTopic.length) { // Check if there is no more questions
         return questionsByTopic[questionNumber];
     } else if (questionNumber === questionsByTopic.length) {
-        alert("sorry no more questions for you!");
-        endGame(correctScore, questionNumber);
+        endGame(correctScore, questionNumber, username);
     }
     
 }
@@ -257,6 +256,20 @@ function selectTopic(username) {
     });
 }
 
-function endGame(correctScore, questionNumber) {
-    alert(`EndGame working, you scored ${correctScore} out of ${questionNumber}`);
+function endGame(correctScore, questionNumber, username) {
+
+    let endGameArea = document.getElementById("game-area");
+    endGameArea.innerHTML = `
+        <p>
+            Thank you <span class="logo-style">${username}</span> for playing <span class="logo-style">Random Trivia</span> <i class="far fa-question-circle"></i>
+        </p>
+    
+    `;
+
+    let areaToClear = document.getElementsByClassName("button");
+    areaToClear[0].innerHTML = `
+        <p id="result">You scored ${correctScore} out of ${questionNumber}.</p>
+    `;
+    let result = document.getElementById("result");
+    result.style.marginTop = "10%";
 }
