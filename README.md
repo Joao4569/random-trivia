@@ -43,26 +43,15 @@ The site will be useful by providing users with an introduction to various possi
 
 #### Initial Validator Tests
 - Initial validator test for index.html results:
-  - 3 Bad Value errors for having spaces in image names.
-    - **Resolved** by re-naming images accordingly.
-  - 1 Warning for using an H1 tag incorrectly.
-    - **Resolved** by replacing it with an unordered list for logical semantic structure.
+  - Passed without any concerns or errors
 
-- Initial validator test for balance.html results:
-  - Found 4 errors referring to usage of height and width attributes in iframe tags with values of "100%".
-    - **Resolved** by removing attributes and styling with CSS.
-  - Found 2 warnings for the use of H1 tags.
-    - **Resolved** by replacing with H2 tags for semantic structure.
+- Initial validator test for style.css results:
+  - Passed without any concerns or errors
 
-- Initial validator test for minfulness.html results:
-  - Found 4 errors referring to usage of height and width attributes in iframe tags with values of "100%".
-    - **Resolved** by removing attributes and styling with CSS.
-  - Found 2 warnings for the use of H1 tags.
-    - **Resolved** by replacing with H2 tags for semantic.
-
-- Initial validator test for sign-up.html results:
-  - Found 1 warning for the use of H1 tags.
-    - **Resolved** by replacing with H2 tags for semantic structure.
+- Initial validator test for script.js results:
+  - Found 3 warnings.
+    - **Resolved** all missing parenthesis on preventDefault functions.
+    - **Resolved** 2 missing semi-colons.
 
 #### Final Validator tests
 
