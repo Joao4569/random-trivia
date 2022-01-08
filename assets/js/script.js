@@ -129,10 +129,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
         event.preventDefault;
         
         if (checkAnswer() === currentQuestion.correctAnswer) {
-            alert(`Well done ${username}, "${currentQuestion.correctAnswer}" is the correct answer!`);
-            questionNumber++ ;
-            correctScore++;
-            displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
+            correctAnswer(currentQuestion.correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore);
         } else {
             alert(`Sorry, the correct answer was "${currentQuestion.correctAnswer}".`);
             questionNumber++;
@@ -273,4 +270,32 @@ function endGame(correctScore, questionNumber, username) {
         event.preventDefault;
         selectTopic(username);
     });
+}
+
+function correctAnswer(currentAnswer, username, topic, questionNumber, correctScore, inCorrectScore) {
+
+    let correctDisplay = document.getElementById("game-area");
+    correctDisplay.innerHTML = `
+        <p>
+            Well done <span class="logo-style">${username}</span>, "${currentAnswer}" is the correct answer!
+        </p>
+    `;
+    
+    let continueOption = document.getElementsByClassName("button");
+    continueOption[0].innerHTML = `
+        <button id="continue" type="submit">Continue</button>
+    `;
+
+    let continueButton = document.getElementById("continue");
+    continueButton.addEventListener("click", function(event) {
+        event.preventDefault;
+        questionNumber++ ;
+        correctScore++ ;
+        displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
+    })
+    
+}
+
+function incorrectAnswer() {
+
 }
