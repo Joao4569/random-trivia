@@ -266,10 +266,18 @@ function endGame(correctScore, questionNumber, username) {
     
     `;
 
-    let areaToClear = document.getElementsByClassName("button");
-    areaToClear[0].innerHTML = `
+    let scoreAndNewGame = document.getElementsByClassName("button");
+    scoreAndNewGame[0].innerHTML = `
         <p id="result">You scored <span class="logo-style">${correctScore}</span> out of <span class="logo-style">${questionNumber}</span>.</p>
+        <button id="start-new-game" type="submit">Start a new game</button>
     `;
+
     let result = document.getElementById("result");
     result.style.marginTop = "10%";
+
+    let startNewGame = document.getElementById("start-new-game");
+    startNewGame.addEventListener("click", function(event) {
+        event.preventDefault;
+        selectTopic(username);
+    });
 }
