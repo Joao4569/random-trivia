@@ -35,7 +35,7 @@ function createUsernameArea() {
 function confirmUsername() {
     let username = document.getElementById("username");
         if(username.value === "") { // Set username if none is provided
-            alert("You have nit entered a usename, Player 1 is the default");
+            alert("You have not entered a usename, Player 1 is the default");
             username.value = "Player 1";
         }
 
@@ -129,7 +129,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
         event.preventDefault;
         
         if (checkAnswer() === currentQuestion.correctAnswer) {
-            alert(`Well done ${username}`);
+            alert(`Well done ${username}, "${currentQuestion.correctAnswer}" is the correct answer!`);
             questionNumber++ ;
             correctScore++;
             displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
