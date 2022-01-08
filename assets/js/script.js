@@ -80,7 +80,7 @@ function confirmUsername() {
 function displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore) {
     
 
-    let currentQuestion =  selectQuestion(topic, questionNumber);
+    let currentQuestion =  selectQuestion(topic, questionNumber, correctScore);
 
     let questionArea = document.getElementById("game-area"); // Display the game question
     questionArea.innerHTML = `
@@ -148,7 +148,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
 /** 
  * This will return a question object given the supplied question number
  */
-function selectQuestion(selectedTopic, questionNumber) {
+function selectQuestion(selectedTopic, questionNumber, correctScore) {
     let questions = [
         {
             question: "How are you?",
@@ -187,6 +187,7 @@ function selectQuestion(selectedTopic, questionNumber) {
         return questionsByTopic[questionNumber];
     } else if (questionNumber === questionsByTopic.length) {
         alert("sorry no more questions for you!");
+        endGame(correctScore, questionNumber);
     }
     
 }
@@ -256,3 +257,6 @@ function selectTopic(username) {
     });
 }
 
+function endGame(correctScore, questionNumber) {
+    alert(`EndGame working, you scored ${correctScore} out of ${questionNumber}`);
+}
