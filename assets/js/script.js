@@ -233,7 +233,7 @@ function selectTopic(username) {
 
     movies.addEventListener("click", function(event) {
         event.preventDefault();
-        displayQuestion(moviesAsTopic, username, 0, 0, 0)
+        displayQuestion(moviesAsTopic, username, 0, 0, 0);
     });
 
     generalKnowledge.addEventListener("click", function(event) {
@@ -243,7 +243,7 @@ function selectTopic(username) {
 
     science.addEventListener("click", function(event) {
         event.preventDefault();
-        displayQuestion(scienceAsTopic, username, 0, 0, 0)
+        displayQuestion(scienceAsTopic, username, 0, 0, 0);
     });
 }
 
