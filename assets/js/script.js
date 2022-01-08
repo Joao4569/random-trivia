@@ -220,7 +220,7 @@ function selectTopic(username) {
     let chooseTopic = document.getElementById("game-area");
     chooseTopic.innerHTML = `
         <p>
-            Which Topic are you interested in <span class="logo-style">${username}</span>?
+            Which Topic are you interested in <span class="logo-style">${username}</span> ?
         </p>
     `;
 
@@ -268,7 +268,7 @@ function endGame(correctScore, questionNumber, username) {
 
     let areaToClear = document.getElementsByClassName("button");
     areaToClear[0].innerHTML = `
-        <p id="result">You scored ${correctScore} out of ${questionNumber}.</p>
+        <p id="result">You scored <span class="logo-style">${correctScore}</span> out of <span class="logo-style">${questionNumber}</span>.</p>
     `;
     let result = document.getElementById("result");
     result.style.marginTop = "10%";
