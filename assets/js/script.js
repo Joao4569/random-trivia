@@ -1,5 +1,5 @@
 document.getElementById("start-button").addEventListener("click", function(event) {
-    event.preventDefault;
+    event.preventDefault();
     createUsernameArea();
 });
 
@@ -10,20 +10,24 @@ document.getElementById("start-button").addEventListener("click", function(event
  */
 function createUsernameArea() {
     let usernameArea = document.getElementById("game-area"); // Create username input area
-    usernameArea.style.width = "30%";
+    usernameArea.style.width = "50%";
     usernameArea.style.textAlign = "center";
     usernameArea.innerHTML = `
         <form method="POST" action="">
         <label for="username">Please create a Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter a username">
+        <input type="text" id="username" name="username" placeholder="">
         </form>
         `;
+
+    //let inputUsername = document.getElementById("username");
+    //inputUsername.style.width = "50%";
+    
     let button = document.getElementsByClassName("button"); // Create username selection button
     button[0].innerHTML = `
         <button id="confirm-username" type="submit">Done</button>
     `;
     document.getElementById("confirm-username").addEventListener("click", function(event) { // listen for selection of username
-        event.preventDefault;
+        event.preventDefault();
         confirmUsername();
     });
 }
@@ -63,12 +67,12 @@ function confirmUsername() {
     let reEnterUsername = document.getElementById("re-enter-username");
 
     confirmUsername.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         selectTopic(username.value);
     });
 
     reEnterUsername.addEventListener("click", function (event) {
-        event.preventDefault;
+        event.preventDefault();
         createUsernameArea();
     });
     
@@ -126,7 +130,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
 
     let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
     waitForConfirmation.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         
         if (checkAnswer() === currentQuestion.correctAnswer) {
             correctAnswer(currentQuestion.correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore);
@@ -228,17 +232,17 @@ function selectTopic(username) {
     let scienceAsTopic = science.getAttribute("id");
 
     movies.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         displayQuestion(moviesAsTopic, username, 0, 0, 0)
     });
 
     generalKnowledge.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         displayQuestion(generalKnowledgeAsTopic, username, 0, 0, 0);
     });
 
     science.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         displayQuestion(scienceAsTopic, username, 0, 0, 0)
     });
 }
@@ -264,7 +268,7 @@ function endGame(correctScore, questionNumber, username) {
 
     let startNewGame = document.getElementById("start-new-game");
     startNewGame.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         selectTopic(username);
     });
 }
@@ -285,7 +289,7 @@ function correctAnswer(currentAnswer, username, topic, questionNumber, correctSc
 
     let continueButton = document.getElementById("continue");
     continueButton.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         questionNumber++ ;
         correctScore++ ;
         displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
@@ -309,7 +313,7 @@ function inCorrectAnswer(correctAnswer, username, topic, questionNumber, correct
 
     let continueButton = document.getElementById("continue");
     continueButton.addEventListener("click", function(event) {
-        event.preventDefault;
+        event.preventDefault();
         questionNumber++ ;
         inCorrectScore++ ;
         displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);

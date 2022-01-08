@@ -73,3 +73,13 @@ i {
 button:hover {
     background-color: #ff6600;
 }
+
+/* for screen width less than 360px */
+@media (max-width: 360px) {
+
+/* game area */
+
+    #username {
+        width: 80%;
+    }
+}
