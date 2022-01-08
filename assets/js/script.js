@@ -146,29 +146,114 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
 function selectQuestion(selectedTopic, questionNumber, correctScore, username) {
     let questions = [
         {
-            question: "How are you?",
+            question: "What was the first feature-length animated movie ever released?",
+            topic: "movies",
+            correctAnswer: "Snow White and the Seven Dwarfs",
+            options: ["Lion King", "Bambi", "Snow White and the Seven Dwarfs", "The simpsons"]
+        },
+        {
+            question: "In The Matrix, does Neo take the blue pill or the red pill?",
+            topic: "movies",
+            correctAnswer: "Red",
+            options: ["Red", "Blue", "What Pill?", "Red then Blue"]
+        },
+        {
+            question: "For what movie did Tom Hanks score his first Academy Award nomination?",
+            topic: "movies",
+            correctAnswer: "Big",
+            options: ["Cast Away", "Toy Story", "The Terminal", "Big"]
+        },
+        {
+            question: "The head of what kind of animal is front-and-center in an infamous scene from The Godfather?",
+            topic: "movies",
+            correctAnswer: "A horse",
+            options: ["A horse", "A cow", "A jaguar", "The furry kind"]
+        },
+        {
+            question: "In what 1976 thriller does Robert De Niro famously say “You talkin’ to me?”",
+            topic: "movies",
+            correctAnswer: "Taxi Driver",
+            options: ["Godfather", "True Confessions", "Taxi Driver", "1900"]
+        },
+        {
+            question: "For what movie did Steven Spielberg win his first Oscar for Best Director?",
+            topic: "movies",
+            correctAnswer: "Schindler’s List",
+            options: ["Schindler’s List", "Jurassic Park", "Saving Private Ryan"]
+        },
+        {
+            question: "What does “www” stand for in a website browser?",
             topic: "general-knowledge",
-            correctAnswer: "excellent",
-            options: ["ok", "bad", "excellent", "so so"]
+            correctAnswer: "World Wide Web",
+            options: ["Wood Wide Web", "Why Will We", "Why Won't We", "World Wide Web"]
         },
         {
-            question : "How is the weather?",
-            topic : "science",
-            correctAnswer : "sunny",
-            options : ["rainy", "sunny", "snow", "thunder"]
+            question: "How long is an Olympic swimming pool (in meters)?",
+            topic: "general-knowledge",
+            correctAnswer: "50 meters",
+            options: ["80 meters", "60 meters", "50 meters", "100 meters"]
         },
         {
-            question : "What color car do you have?",
-            topic : "general-knowledge",
-            correctAnswer : "blue",
-            options : ["blue", "red", "yellow", "brown"]
+            question: "What countries made up the original Axis powers in World War II?",
+            topic: "general-knowledge",
+            correctAnswer: "Germany, Italy, and Japan",
+            options: ["Hawaii, Italy, and Japan", "Germany, Italy, and Japan", "Germany, Portugal, and Japan", "Germany, Italy, and Iceland"]
         },
         {
-            question : "How many cars do you have?",
-            topic : "general-knowledge",
-            correctAnswer : "One",
-            options : ["One", "Two", "Three", "Four"]
+            question: "Which country do cities of Perth, Adelade & Brisbane belong to?",
+            topic: "general-knowledge",
+            correctAnswer: "Australia",
+            options: ["Japan", "Jamaica", "Italy", "Australia"]
+        },
+        {
+            question: "How many countries still have the shilling as currency?",
+            topic: "general-knowledge",
+            correctAnswer: "Four",
+            options: ["Four", "Five", "fifty", "Three"]
+        },
+        {
+            question: "What is the name of the biggest technology company in South Korea?",
+            topic: "general-knowledge",
+            correctAnswer: "Samsung",
+            options: ["Mc Donalds", "Nokia", "Samsung", "Durex"]
+        },
+        {
+            question: "What is the largest star in the solar system?",
+            topic: "science",
+            correctAnswer: "The Sun",
+            options: ["The Sun", "The Moon", "Jupiter", "The North Star"]
+        },
+        {
+            question: "What is the largest organ in the human body?",
+            topic: "science",
+            correctAnswer: "The Skin",
+            options: ["The Skin", "The Heart", "The Liver", "The Ear"]
+        },
+        {
+            question: "How many oceans contain sharks?",
+            topic: "science",
+            correctAnswer: "All of them",
+            options: ["None of them", "All of them", "7", "58"]
+        },
+        {
+            question: "“For every action, there is an equal and opposite reaction” is an example of one of these.",
+            topic: "science",
+            correctAnswer: "Newton’s Laws",
+            options: ["Traffic Law", "No law", "Newton’s Laws", "Dogs paws"]
+        },
+        {
+            question: "What is the tallest mountain in the world?",
+            topic: "science",
+            correctAnswer: "Mount Everest",
+            options: ["Mount Rushmore", "Mount Kilimanjaro", "Himalayas", "Mount Everest"]
+        },
+        {
+            question: "How many elements are listed in the periodic table?",
+            topic: "science",
+            correctAnswer: "118",
+            options: ["112", "3", "181", "118"]
         }
+        
     ];
     
     let questionsByTopic = [];
