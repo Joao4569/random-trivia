@@ -131,10 +131,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
         if (checkAnswer() === currentQuestion.correctAnswer) {
             correctAnswer(currentQuestion.correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore);
         } else {
-            alert(`Sorry, the correct answer was "${currentQuestion.correctAnswer}".`);
-            questionNumber++;
-            inCorrectScore++;
-            displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
+            inCorrectAnswer(currentQuestion.correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore);
         }
     });
 }
@@ -292,10 +289,29 @@ function correctAnswer(currentAnswer, username, topic, questionNumber, correctSc
         questionNumber++ ;
         correctScore++ ;
         displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
-    })
+    });
     
 }
 
-function incorrectAnswer() {
+function inCorrectAnswer(correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore) {
 
+    let inCorrectDisplay = document.getElementById("game-area");
+    inCorrectDisplay.innerHTML = `
+        <p>
+            Unfortunately <span class="logo-style">${username}</span>, "${correctAnswer}" was the correct answer!
+        </p>
+    `;
+    
+    let continueOption = document.getElementsByClassName("button");
+    continueOption[0].innerHTML = `
+        <button id="continue" type="submit">Continue</button>
+    `;
+
+    let continueButton = document.getElementById("continue");
+    continueButton.addEventListener("click", function(event) {
+        event.preventDefault;
+        questionNumber++ ;
+        inCorrectScore++ ;
+        displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
+    });
 }
