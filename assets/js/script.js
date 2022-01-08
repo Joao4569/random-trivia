@@ -134,15 +134,12 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
             correctScore++;
             displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
         } else {
-            alert(`Unfortunately you are incorrect, the correct answer was "${currentQuestion.correctAnswer}".`);
+            alert(`Sorry, the correct answer was "${currentQuestion.correctAnswer}".`);
             questionNumber++;
             inCorrectScore++;
             displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore);
         }
     });
-
-   
-    
 }
 
 /** 
@@ -209,11 +206,7 @@ function checkAnswer() {
         return answer3.getAttribute("value");
     } else if (answer4.checked) {
         return answer4.getAttribute("value");
-    } else {
-        alert("Please select an answer")
     }
-
-    
 }
 
 function selectTopic(username) {
