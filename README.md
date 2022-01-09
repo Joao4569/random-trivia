@@ -155,7 +155,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
   - I got into the habit of using the alert function to test all event listeners and functions in order to see if they were behaving as I had intended.
   - If an issue was found, then I would place the "debugger" keyword in the script and make use of Chrome Developer Tools in order to track the entire process and find my logical error.
 - Found bug with the username input page, if the user pressed the enter key after using the text input, then the site would try and submit the form, which displayed a 501 Error code.
-  - **Not Resolved**
+  - **Resolved** by adding an event listener to prevent the default event from triggering the form to post.
 - Found bug with answer incrementation, the site would not display the final score increment.
   - **Resolved** by creating the correct answer, incorrect answer and end of game functions, in order to track the score and display a correct final score to the user ant the end of a game.
 - Sourced most common media breakpoint widths on [www.freecodecamp.org](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/.) and made the site responsive down to minimum width of 320 pixels.
