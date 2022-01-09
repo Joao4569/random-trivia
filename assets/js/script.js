@@ -104,13 +104,13 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     <div>
         <form method="POST" action="">
         <input type="radio" id="answer1" name="answer" value="${currentQuestion.options[0]}">
-        <label for="answer1">${currentQuestion.options[0]}</label><br>
+        <label for="answer1">${currentQuestion.options[0]}</label><br><br>
         <input type="radio" id="answer2" name="answer" value="${currentQuestion.options[1]}">
-        <label for="answer2">${currentQuestion.options[1]}</label><br>
+        <label for="answer2">${currentQuestion.options[1]}</label><br><br>
         <input type="radio" id="answer3" name="answer" value="${currentQuestion.options[2]}">
-        <label for="answer3">${currentQuestion.options[2]}</label><br>
+        <label for="answer3">${currentQuestion.options[2]}</label><br><br>
         <input type="radio" id="answer4" name="answer" value="${currentQuestion.options[3]}">
-        <label for="answer4">${currentQuestion.options[3]}</label><br>
+        <label for="answer4">${currentQuestion.options[3]}</label><br><br>
         </form>
     </div>
     `;
@@ -120,7 +120,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     question.style.paddingBottom = "10px";
     
     let form = document.getElementsByTagName("form");
-    form[0].style.paddingTop = "10px";
+    form[0].style.paddingTop = "25px";
     form[0].style.textAlign = "left";
     
     // Display and style username, score count and check answer button
