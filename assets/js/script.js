@@ -30,6 +30,10 @@ function createUsernameArea() {
         event.preventDefault();
         confirmUsername();
     });
+
+    document.addEventListener("keypress", function(event) {
+        event.preventDefault();
+    });
 }
 
 /**
