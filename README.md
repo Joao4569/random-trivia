@@ -63,13 +63,13 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 - __The Landing Page__
 
-  - The landing page introduces the user to the game with a fun and catchy logo which is displayed throughout the game and a short introductory text explaining the game's purpose.
+  - The landing page introduces the user to the game with a fun and eye catching logo which is displayed throughout the game and a short introductory text explaining the game's purpose.
   - The landing page also contains a button to initiate the game.
 
   ![Landing Page Screenshot](assets/images/landing-page-screenshot.png)
 
 
-  - The "Let's get started" button highilghts when hovered over for user feedback, as will all other buttons throughout the game.
+  - The "Let's get started" button highlights when hovered over for user feedback, as will all other buttons throughout the game.
 
   ![Start Button](assets/images/start-button.png)
 
@@ -178,7 +178,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
   - Passed without any concerns or errors
 
 - Initial validator test for script.js results:
-  - Found 3 warnings.
+  - Found mulitple warnings.
     - **Resolved** all missing parenthesis on preventDefault functions.
     - **Resolved** 2 missing semi-colons.
 
@@ -188,38 +188,29 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
   - 1 Warning for the introduction section not having a heading as it was wrapped in a nav element.
     - **Resolved** by removing the outer nav element as it served no other function.
 
-- Final validator test for balance.html results:
+- Final validator test for style.css file results:
   - No errors or warnings found.
 
-- Final validator test for mindfulness.html results:
+- Final validator test for script.js file results:
   - No errors or warnings found.
 
-- Final validator test for sign-up.html results:
-  - No errors or warnings found.
-
-- Final validator test for style.css results:
-  - file validates as CSS level 3 + SVG
-
-- Final validator test for thank-you.html results:
-  - No errors or warnings found.
-
-- All the pages of BeCentered have passed their validator testing at the time of submission.
+- All the pages of Random Trivia have passed their validator testing at the time of submission.
 
 ### Unfixed Bugs
 
 ## Deployment
 
-- BeCentered was deployed to GitHub pages, the steps were as follows:
+- Random trivia was deployed to GitHub pages, the steps were as follows:
   - While in the GitHub repository, select the settings tab.
   - Then select the Pages tab from the new menu to the left of the viewport.
   - From the source section drop down menu, select Main branch.
   - Once the main branch has been selected, the page will automatically refresh with a detailed ribbon display to indicate the successful deployment.
 
-Here is the live link [BeCentered](https://joao4569.github.io/be-centered/)
+Here is the live link [Random Trivia](https://joao4569.github.io/random-trivia/)
 
 ## Deployment Testing
 
-- Tested all internal and external links, form validation as well as responsivenes of Becentered on deployed site and all are working as intended.
+- Tested all buttons as well as responsivenes of Random Trivia on deployed site and all are working as intended.
 
 ## Credits
 
@@ -228,15 +219,12 @@ Here is the live link [BeCentered](https://joao4569.github.io/be-centered/)
 ### Content
 
 - Commit comment conventions were taken from [Freecodecamp.org](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/), I do not totally understand all the vernacular but tried my best to implement it as best I could.
-- Font pairing taken from example seen on [typ.io](https://typ.io/fonts/fredoka_one), after deciding to use the Fredoka One font as my headings' font.
-- Font icons sourced on [fontawesome.com](https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=question&m=free).
+- Found out how to check if a radio button is selected in Javascript on [Stackoverflow.com](https://stackoverflow.com/questions/1423777/how-can-i-check-whether-a-radio-button-is-selected-with-javascript).
+- Science topic questions and correct answers taken from [Greatwolf.com](https://www.greatwolf.com/blog/science-trivia-questions/).
+- General Knowledge topic questions and correct answers taken from [Quizbreaker.com](https://www.quizbreaker.com/trivia-questions).
+- Movies topic questions and correct answers taken from [Parade.com](https://parade.com/977752/samuelmurrian/movie-trivia/).
 
 ### Media
 
-- All images sourced from [Pexels](https://www.pexels.com).
-- Hero image sizing suggestions sourced on [Hubspot](https://blog.hubspot.com/marketing/hero-image).
-- Information for optimizing images for web design found on [jimdo](https://www.jimdo.com/blog/optimize-website-images-for-better-design-seo/).
-- All images on Becentered were resized using [TinyPNG](https://tinypng.com/).
-- Code for Hero image zoom animation taken directly from "Love Running" walkthrough project.
-- Method for embedding Youtube video learnt on [GeeksforGeeks](https://www.geeksforgeeks.org/html-adding-youtube-videos/).
-- Learn about object-fit CSS property on [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+- Font pairing taken from example seen on [typ.io](https://typ.io/fonts/fredoka_one), after deciding to use the Fredoka One font as my headings' font.
+- Font icons sourced on [fontawesome.com](https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=question&m=free).
