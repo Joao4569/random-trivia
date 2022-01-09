@@ -1,8 +1,10 @@
 # Random Trivia
 
-BeCentered is a site that hopes to provide useful information for centering one's body and mind to users. The site is aimed at users who are beginners, that are seeking methods to centre their body and mind, while also providing users in Zürich, Switzerland with an option to be able to get in touch with other like minded individuals by means of local social sessions.
+Random Trivia is an interactive front-end site that provides the user with a fun trivia game that allows users to select a username and select trivia questions from 3 different categories, while keeping score of how many questions were answered correctly and incorectly and dispalying a final result at the end of a game.
 
-The site will be useful by providing users with an introduction to various possible methods of acheiving their goals, by means of meaningfull informational text, images and videos as well as having a monthly schedule for users in the local area to meet up for weekly social sessions. There will also be an option to sign up to a monthly newsletter.
+The site will be useful by providing users with an interactive, intertaining and fun trivia game that is responsive to all their devices and allows them to actively engage with the data while keeping track of their results.
+
+The site owner's goal is to provide a challenging, fun and entertaining quiz to their online users.
 
 ![Responsive Layout](/assets/images/responsive-layout.png)
 
