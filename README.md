@@ -8,6 +8,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 ![Responsive Layout](/assets/images/responsive-layout.png)
 
+
 ## Conception
 
 - I made use of [Balsamiq](https://balsamiq.com/) to create a wireframe concept for Random Trivia.
@@ -15,7 +16,46 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 ### Landing Page
 
-- I tried to design a simple yet effective landing page which efficiently and clearly describes the site's purpose.
+- I tried to design a simple yet effective landing page which efficiently and clearly describes the site's purpose, containg a button to trigger the intiation of the game.
+
+![Wireframe Landing Page](/assets/images/balsamiq-landing-page.png)
+
+
+### Username Entry
+
+- A simple and clean username entry after the user decides to initiate the game, with a button to confirm entry once the user has entered a username.
+
+![Wireframe Enter Username](/assets/images/balsamiq-username.png)
+
+
+### Welcome Page
+
+- Initially I thought that I would add an additional welcome page after the user entered a username, but deicided against this in the final product as I believe that is was unnecessary and had no valuable purpose.
+- Instead in the final product I decided to create a function where the user has the option to confirm or edit their username after previewing it.
+
+![Wireframe Welcome Message](/assets/images/balsamiq-welcome-page.png)
+
+
+### Question Display
+
+- I designed a simple question layout with a clear objective.
+
+![Wireframe Question](/assets/images/balsamiq-question.png)
+
+
+### Answer Feedback
+
+- I also knew that I wanted some way of providing the user with feedback after selecting an answer, whether the user was correct or not.
+
+![Wireframe Answer Feeback](/assets/images/balsamiq-congratulations.png)
+
+
+### End of Quiz summary
+
+- At the end of the quiz I wanted the user to receive some form of feedback giving them a summary of their achievements.
+
+![Wireframe End of Game](/assets/images/balsamiq-end-of-game.png)
+
 
 ## Features
 
