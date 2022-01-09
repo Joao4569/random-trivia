@@ -137,10 +137,27 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 ### Features Left to Implement
 
+- __Difficulty Selector__
+
+  - In future with the addition of more questions, one good provide the users with a difficulty selector after the user has chosen their topic.
+
+- __Multiple Players__
+
+  - I would also think that a good future feature to add would be to give the user the ability to add other users to the game, track their idividual scores and have a player ranking at the end of the game.
+
+- __Custom Questions__
+
+  - I would also suggest in future to give the user the functionality to be able to create their own quiz.
+
 ## Testing
 
-- Found bug with navigation menu order, it is displaying in reverse order.
-  - **Resolved** by researching information on [Web Developer Diary](http://nambiara.blogspot.com/2010/10/float-right-without-changing-order.html) and applying it to my design.
+- I made extensive use of Chrome Developer Tools, the "debugger" keyword and the alert function while developing and testing Random Trivia, from inception to completion.
+  - I got into the habit of using the alert function to test all event listeners and functions in order to see if they were behaving as I had intended.
+  - If an issue was found, then I would place the "debugger" keyword in the script and make use of Chrome Developer Tools in order to track the entire process and find my logical error.
+- Found bug with the username input page, if the user pressed the enter key after using the text input, then the site would try and submit the form, which displayed a 501 Error code.
+  - **Not Resolved**
+- Found bug with answer incrementation, the site would not display the final score increment.
+  - **Resolved** by creating the correct answer, incorrect answer and end of game functions, in order to track the score and display a correct final score to the user ant the end of a game.
 - Sourced most common media breakpoint widths on [www.freecodecamp.org](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/.) and made the site responsive down to minimum width of 320 pixels.
   - Mobile devices: 320px — 480px
   - iPads, Tablets: 481px — 768px
@@ -151,7 +168,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 ### Validator Testing
 
-- Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
+- Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file, the official [W3C validator](https://validator.w3.org/) for the HTML file and [Jshint.com](https://jshint.com/) for all the necessary validator testing.
 
 #### Initial Validator Tests
 - Initial validator test for index.html results:
