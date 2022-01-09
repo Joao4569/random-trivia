@@ -11,9 +11,11 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 ## Conception
 
 - I made use of [Balsamiq](https://balsamiq.com/) to create a wireframe concept for Random Trivia.
-- The main design of the page has changed as I progressed through the development towards a finished product.
+- I found it challenging to conceptualize the complete design of the site, concerning how capable I am with Javascript and what I could accomplish within the given amount of time, therfore the main design of the page has changed as I progressed through the development towards a finished product.
 
-### Home Page
+### Landing Page
+
+- I tried to design a simple yet effective landing page which efficiently and clearly describes the site's purpose.
 
 ## Features
 
