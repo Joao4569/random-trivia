@@ -63,9 +63,77 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 - __The Landing Page__
 
-- __The Introduction Section__
+  - The landing page introduces the user to the game with a fun and catchy logo which is displayed throughout the game and a short introductory text explaining the game's purpose.
+  - The landing page also contains a button to initiate the game.
 
-- __The Footer__
+  ![Landing Page Screenshot](assets/images/landing-page-screenshot.png)
+
+
+  - The "Let's get started" button highilghts when hovered over for user feedback, as will all other buttons throughout the game.
+
+  ![Start Button](assets/images/start-button.png)
+
+
+- __The Username input Section__
+
+  - Once clicked, the "Let's get started" button triggers a function to provide the user with an text input and prompts the user to enter a username.
+
+  ![Enter a Username](assets/images/enter-username-screenshot.png)
+
+
+  - Once the user has entered a username it can be confirmed by clicking the "Done" button on the screen.
+
+  ![Username Enter](assets/images/username-entered.png)
+
+
+  - If the user does not enter a username then an alert will pop up on the screen informing the user that no username has been entered and a default username will be provided.
+
+  ![NoUsername was provided](assets/images/no-username-alert.png)
+
+  - Once the "Done" button is clicked, it will trigger a function to provide the user a preview of their username and ask the user if they would confirm their username or re-enter a new one.
+  - If the "Re-enter" button is clicked then the user will be taken back to the screen with the text input in order to re-enter a new username.
+  - If the user clicks the "Confirm" button then the user will be taken to the select topic screen. 
+
+  ![Confirm or Re-enter Username](assets/images/confirm-or-re-enter.png)
+
+
+- __The Select Topic Section__
+
+  - Once the user is on the select topic screen, then the user has a choice of three topics to choose from by means of buttons provided, namely "Movies", "General Knowledge" or "Science".
+
+  ![Choose Topic](assets/images/choose-topic-screenshot.png)
+
+
+- __The Display Question Section__
+
+  - Once the user has chosen a topic then the user will be displayed the first question from the selected topic of questons.
+  - This section will display a question and provide the user with four possible answers.
+  - This section also displays the user's username and indicates how many questions have been answered correctly or incorrectly.
+  - There is a clearly marked button where the user can click in order to check their answer.
+
+  ![Question Display](assets/images/question-display.png)
+
+  - If the user selects the incorrect answer or no answer at all, then the game will respond with a message and inform the user of the correct answer.
+  - The user is also provided a continue button in order to continue the game.
+
+  ![Incorrect or No Answer](assets/images/incorrect-or-no-answer.png)
+
+  - If the user selects the correct answer, the game will respond with a message to confirm this.
+  - The user is also provided a continue button in order to continue the game.
+
+  ![Correct Answer](assets/images/correct-answer.png)
+
+  - Whether the answer was answered correctly or not, once the user clicks on the "Continue" button, the next question will be displayed while also incrementing the relevant score of either correct or incorrect answer's answered.
+
+  ![Incremented Score](assets/images/incremented-score.png)
+
+  - Once the game is done and all answers in that topic have been answered, the user will be displayed a thank you message, a result of how many questions were entered correctly and a option to start a new game.
+
+  ![End of Game](assets/images/end-of-game.png)
+
+  - If the user chooses to play a new game then the user will be taken back to the choose topic display, while retaining their username.
+
+  ![Choose Topic](assets/images/choose-topic-screenshot.png)
 
 ### Features Left to Implement
 
