@@ -13,7 +13,6 @@ function createUsernameArea() {
 
     // Create username input area
     let usernameArea = document.getElementById("game-area");
-    usernameArea.style.width = "30%";
     usernameArea.style.textAlign = "center";
     usernameArea.innerHTML = `
         <form method="POST" action="">

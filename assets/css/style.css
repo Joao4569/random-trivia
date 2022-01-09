@@ -86,10 +86,11 @@ button:hover {
     /* game area border thickness */
     #game-area {
         border-width: 5px;
+        width: 60%;
     }
 
     /* fontsize */
     body {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
