@@ -10,7 +10,7 @@ document.getElementById("start-button").addEventListener("click", function(event
  */
 function createUsernameArea() {
     let usernameArea = document.getElementById("game-area"); // Create username input area
-    usernameArea.style.width = "50%";
+    usernameArea.style.width = "30%";
     usernameArea.style.textAlign = "center";
     usernameArea.innerHTML = `
         <form method="POST" action="">
