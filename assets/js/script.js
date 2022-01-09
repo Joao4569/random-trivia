@@ -1,15 +1,18 @@
+// Listens for the user to inititate the game
 document.getElementById("start-button").addEventListener("click", function(event) {
     event.preventDefault();
     createUsernameArea();
 });
 
 /**
- * Once the user initiates play, this will create a username input area and a button
+ * Once the user initiates the game, this will create a username input area and a button
  * to confirm the users selection.
  * 
  */
 function createUsernameArea() {
-    let usernameArea = document.getElementById("game-area"); // Create username input area
+
+    // Create username input area
+    let usernameArea = document.getElementById("game-area");
     usernameArea.style.width = "30%";
     usernameArea.style.textAlign = "center";
     usernameArea.innerHTML = `
@@ -18,19 +21,20 @@ function createUsernameArea() {
         <input type="text" id="username" name="username" placeholder="">
         </form>
         `;
-
-    //let inputUsername = document.getElementById("username");
-    //inputUsername.style.width = "50%";
     
-    let button = document.getElementsByClassName("button"); // Create username selection button
+    // Create username selection button
+    let button = document.getElementsByClassName("button");
     button[0].innerHTML = `
         <button id="confirm-username" type="submit">Done</button>
     `;
-    document.getElementById("confirm-username").addEventListener("click", function(event) { // listen for selection of username
+
+    // Listen for submission of username
+    document.getElementById("confirm-username").addEventListener("click", function(event) {
         event.preventDefault();
         confirmUsername();
     });
 
+    // Listen for keypress events - prevent form from submitting
     document.addEventListener("keypress", function(event) {
         event.preventDefault();
     });
@@ -41,8 +45,10 @@ function createUsernameArea() {
  * a preview window with confirmation and correction buttons.
  */
 function confirmUsername() {
+
+    // Check if the username field is empty
     let username = document.getElementById("username");
-        if(username.value === "") { // Set username if none is provided
+        if(username.value === "") {
             alert("You have not entered a usename, Player 1 is the default");
             username.value = "Player 1";
         }
@@ -67,7 +73,7 @@ function confirmUsername() {
     let confirmUsername = document.getElementById("final-confirm-username");
     confirmUsername.style.marginRight = "5vw";
 
-    // Listen for user clicks and determine next function
+    // Listen for specific user clicks and determine next function
     let reEnterUsername = document.getElementById("re-enter-username");
 
     confirmUsername.addEventListener("click", function(event) {
@@ -83,14 +89,16 @@ function confirmUsername() {
 }
 
 /**
- * This will display the given question and display if the answer is correct or not
+ * This will display the given question, current score, username and create a check answer
+ * button
 */
 function displayQuestion(topic, username, questionNumber, correctScore, inCorrectScore) {
     
 
     let currentQuestion =  selectQuestion(topic, questionNumber, correctScore, username);
 
-    let questionArea = document.getElementById("game-area"); // Display the game question
+    // Display and style the game question
+    let questionArea = document.getElementById("game-area");
     questionArea.innerHTML = `
     <p id="question"> ${currentQuestion.question}</p>
     <div>
@@ -107,7 +115,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     </div>
     `;
 
-    let question = document.getElementById("question"); // Style the game question
+    let question = document.getElementById("question");
     question.style.borderBottom = "5px solid #ff6600";
     question.style.paddingBottom = "10px";
     
@@ -115,6 +123,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     form[0].style.paddingTop = "10px";
     form[0].style.textAlign = "left";
     
+    // Display and style username, score count and check answer button
     let button = document.getElementsByClassName("button");
     button[0].innerHTML = `
         <p id="display-username" class="logo-style">
@@ -132,7 +141,8 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     let displayedScore = document.getElementById("display-score");
     displayedScore.style.marginTop = "2%";
 
-    let waitForConfirmation = document.getElementById("check-answer"); // Listen for event and display wether correct or not
+    // Listen for user click to check answer
+    let waitForConfirmation = document.getElementById("check-answer");
     waitForConfirmation.addEventListener("click", function(event) {
         event.preventDefault();
         
@@ -260,6 +270,8 @@ function selectQuestion(selectedTopic, questionNumber, correctScore, username) {
         
     ];
     
+
+    // Loop through questions and filter by topic
     let questionsByTopic = [];
     for (let question of questions) {
         if (question.topic === selectedTopic) {
@@ -267,7 +279,8 @@ function selectQuestion(selectedTopic, questionNumber, correctScore, username) {
         }
     }
 
-    if (questionNumber < questionsByTopic.length) { // Check if there is no more questions
+    // Check if there are more questions or end of game
+    if (questionNumber < questionsByTopic.length) {
         return questionsByTopic[questionNumber];
     } else if (questionNumber === questionsByTopic.length) {
         endGame(correctScore, questionNumber, username);
@@ -297,7 +310,13 @@ function checkAnswer() {
     }
 }
 
+/**
+ * This will display an area where the user can select a topic for the quiz
+ * questions by means of buttons
+ */
 function selectTopic(username) {
+
+    // Display topic selector and buttons
     let chooseTopic = document.getElementById("game-area");
     chooseTopic.innerHTML = `
         <p>
@@ -321,6 +340,7 @@ function selectTopic(username) {
     let science = document.getElementById("science");
     let scienceAsTopic = science.getAttribute("id");
 
+    // Listeners for topic buttons
     movies.addEventListener("click", function(event) {
         event.preventDefault();
         displayQuestion(moviesAsTopic, username, 0, 0, 0);
@@ -337,25 +357,33 @@ function selectTopic(username) {
     });
 }
 
+/**
+ * This will create the end of game screen with a final score and a button 
+ * to start a new game if the user chooses to do so
+ */
 function endGame(correctScore, questionNumber, username) {
 
+    // Display and style thank you message, final score and button
     let endGameArea = document.getElementById("game-area");
     endGameArea.innerHTML = `
         <p>
-            Thank you <span class="logo-style">${username}</span> for playing <span class="logo-style">Random Trivia</span> <i class="far fa-question-circle"></i>
+            Thank you <span class="logo-style">${username}</span> for playing <span class="logo-style">Random Trivia</span>
+             <i class="far fa-question-circle"></i>
         </p>
     
     `;
 
     let scoreAndNewGame = document.getElementsByClassName("button");
     scoreAndNewGame[0].innerHTML = `
-        <p id="result">You scored <span class="logo-style">${correctScore}</span> out of <span class="logo-style">${questionNumber}</span>.</p>
+        <p id="result">You scored <span class="logo-style">${correctScore}</span> out of
+        <span class="logo-style">${questionNumber}</span>.</p>
         <button id="start-new-game" type="submit">Start a new game</button>
     `;
 
     let result = document.getElementById("result");
     result.style.marginTop = "10%";
 
+    // Listen for user input
     let startNewGame = document.getElementById("start-new-game");
     startNewGame.addEventListener("click", function(event) {
         event.preventDefault();
@@ -363,8 +391,14 @@ function endGame(correctScore, questionNumber, username) {
     });
 }
 
+
+/**
+ * Display message for correct answer, create continue button and increment correct score
+ * and question number
+ */
 function correctAnswer(currentAnswer, username, topic, questionNumber, correctScore, inCorrectScore) {
 
+    // Display message and create continue button
     let correctDisplay = document.getElementById("game-area");
     correctDisplay.innerHTML = `
         <p>
@@ -377,6 +411,7 @@ function correctAnswer(currentAnswer, username, topic, questionNumber, correctSc
         <button id="continue" type="submit">Continue</button>
     `;
 
+    // Listen for user input
     let continueButton = document.getElementById("continue");
     continueButton.addEventListener("click", function(event) {
         event.preventDefault();
@@ -387,8 +422,13 @@ function correctAnswer(currentAnswer, username, topic, questionNumber, correctSc
     
 }
 
+/**
+ * Display message for incorrect answer, create continue button and increment incorrect score
+ * and question number
+ */
 function inCorrectAnswer(correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore) {
 
+    // Display message and create continue button
     let inCorrectDisplay = document.getElementById("game-area");
     inCorrectDisplay.innerHTML = `
         <p>
@@ -401,6 +441,7 @@ function inCorrectAnswer(correctAnswer, username, topic, questionNumber, correct
         <button id="continue" type="submit">Continue</button>
     `;
 
+    // Listen for user input
     let continueButton = document.getElementById("continue");
     continueButton.addEventListener("click", function(event) {
         event.preventDefault();
