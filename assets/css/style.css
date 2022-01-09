@@ -82,4 +82,14 @@ button:hover {
     #username {
         width: 80%;
     }
+
+    /* game area border thickness */
+    #game-area {
+        border-width: 5px;
+    }
+
+    /* fontsize */
+    body {
+        font-size: 1em;
+    }
 }
