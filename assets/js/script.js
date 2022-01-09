@@ -281,6 +281,7 @@ function checkAnswer() {
     let answer3 = document.getElementById("answer3");
     let answer4 = document.getElementById("answer4");
 
+    //.checked checker use taken from stackoverflow.com, credited in readme file
     if (answer1.checked) {
         return answer1.getAttribute("value");
     } else if (answer2.checked) {
@@ -363,7 +364,7 @@ function correctAnswer(currentAnswer, username, topic, questionNumber, correctSc
     let correctDisplay = document.getElementById("game-area");
     correctDisplay.innerHTML = `
         <p>
-            Well done <span class="logo-style">${username}</span>, "${currentAnswer}" is the correct answer!
+            Well Done <span class="logo-style">${username}</span>, "${currentAnswer}" is the correct answer!
         </p>
     `;
     
