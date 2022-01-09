@@ -99,6 +99,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
 
     // Display and style the game question
     let questionArea = document.getElementById("game-area");
+    questionArea.style.width = "60%";
     questionArea.innerHTML = `
     <p id="question"> ${currentQuestion.question}</p>
     <div>
