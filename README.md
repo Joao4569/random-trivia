@@ -6,7 +6,7 @@ The site will be useful by providing users with an interactive, intertaining and
 
 The site owner's goal is to provide a challenging, fun and entertaining quiz to their online users.
 
-![Responsive Layout](/assets/images/responsive-layout.png)
+![Responsive Layout](/assets/images/am-i-responsive.png)
 
 
 ## Conception
