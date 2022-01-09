@@ -185,14 +185,13 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 #### Final Validator tests
 
 - Final validator test for index.html results:
-  - 1 Warning for the introduction section not having a heading as it was wrapped in a nav element.
-    - **Resolved** by removing the outer nav element as it served no other function.
+  - Passed without any concerns or errors
 
 - Final validator test for style.css file results:
-  - No errors or warnings found.
+  - Passed without any concerns or errors
 
 - Final validator test for script.js file results:
-  - No errors or warnings found.
+  - Passed without any concerns or errors
 
 - All the pages of Random Trivia have passed their validator testing at the time of submission.
 
