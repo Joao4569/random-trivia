@@ -200,6 +200,8 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 ### Unfixed Bugs
 
+- None that I am aware of.
+
 ## Deployment
 
 - Random trivia was deployed to GitHub pages, the steps were as follows:
