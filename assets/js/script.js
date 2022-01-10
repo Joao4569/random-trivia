@@ -35,7 +35,11 @@ function createUsernameArea() {
 
     // Listen for keypress events - prevent form from submitting
     document.addEventListener("keypress", function(event) {
-        event.preventDefault();
+        if (event.key === "Enter") {
+            event.preventDefault();
+        }
+        
+        
     });
 }
 
