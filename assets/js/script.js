@@ -224,7 +224,7 @@ function selectQuestion(selectedTopic, questionNumber, correctScore, username) {
       question: "How many countries still have the shilling as currency?",
       topic: "general-knowledge",
       correctAnswer: "Four",
-      options: ["Four", "Five", "fifty", "Three"]
+      options: ["Four", "Five", "Fifty", "Three"]
     },
     {
       question: "What is the name of the biggest technology company in South Korea?",
