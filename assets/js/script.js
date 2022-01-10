@@ -20,6 +20,9 @@ function createUsernameArea() {
         <input type="text" id="username" name="username" placeholder="">
         </form>
         `;
+
+    let usernameInput = document.getElementById("username");
+    usernameInput.style.height = "1.8em";
     
     // Create username selection button
     let button = document.getElementsByClassName("button");
