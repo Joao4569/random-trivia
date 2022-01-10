@@ -2,7 +2,7 @@
 
 Random Trivia is an interactive front-end site that provides the user with a fun trivia game that allows users to select a username and select trivia questions from 3 different categories, while keeping score of how many questions were answered correctly and incorectly and dispalying a final result at the end of a game.
 
-The site will be useful by providing users with an interactive, intertaining and fun trivia game that is responsive to all their devices and allows them to actively engage with the data while keeping track of their results.
+The site will be useful by providing users with an interactive, entertaining and fun trivia game that is responsive to all their devices and allows them to actively engage with the data while keeping track of their results.
 
 The site owner's goal is to provide a challenging, fun and entertaining quiz to their online users.
 
@@ -81,7 +81,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
   ![Enter a Username](assets/images/enter-username-screenshot.png)
 
 
-  - Once the user has entered a username it can be confirmed by clicking the "Done" button on the screen.
+  - TOnce the user has entered a username, it can be confirmed by clicking the "Done" button on the screen.
 
   ![Username Enter](assets/images/username-entered.png)
 
@@ -90,7 +90,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
   ![NoUsername was provided](assets/images/no-username-alert.png)
 
-  - Once the "Done" button is clicked, it will trigger a function to provide the user a preview of their username and ask the user if they would confirm their username or re-enter a new one.
+  - Once the "Done" button is clicked, it will trigger a function to provide the user a preview of their username and ask the user if they would like to confirm their username or re-enter a new one.
   - If the "Re-enter" button is clicked then the user will be taken back to the screen with the text input in order to re-enter a new username.
   - If the user clicks the "Confirm" button then the user will be taken to the select topic screen. 
 
@@ -139,7 +139,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 - __Difficulty Selector__
 
-  - In future with the addition of more questions, one good provide the users with a difficulty selector after the user has chosen their topic.
+  - In future with the addition of more questions, one could provide the users with a difficulty selector after the user has chosen their topic.
 
 - __Multiple Players__
 
@@ -147,7 +147,7 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
 
 - __Custom Questions__
 
-  - I would also suggest in future to give the user the functionality to be able to create their own quiz.
+  - I would also suggest in future to give the user the functionality to be able to create their own quiz, by providing a field to input their own questions and answers.
 
 ## Testing
 
@@ -165,6 +165,9 @@ The site owner's goal is to provide a challenging, fun and entertaining quiz to 
   - Desktops, large screens: 1025px — 1200px
   - Extra large screens, TV: 1201px and more
 - Made use of Chrome developer tools for previewing and testing new designs for media queries as well as UX aspects.
+- I have tested all buttons on the game and they are all acting as intended.
+- I have done the best I can to test all possible scenarios throughout the game and catered to them accordingly.
+- My mentor Anthony has also assisted with the testing of the final product.
 
 ### Validator Testing
 
@@ -214,6 +217,8 @@ Here is the live link [Random Trivia](https://joao4569.github.io/random-trivia/)
 ## Credits
 
 - First and foremost I would like to thank my mentor Anthony for his valuable input.
+- I also regularly make use of Code Institute's LMS to look up previous lesson in order to refresh my memory.
+- I also made regular use of [W3Schools.com](https://www.w3schools.com/) and [Stackoverflow.com](https://stackoverflow.com/) in order to remind me of how some standard HTML and CSS functions.
 
 ### Content
 
