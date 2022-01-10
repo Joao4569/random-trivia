@@ -4,6 +4,11 @@ document.getElementById("start-button").addEventListener("click", function(event
     createUsernameArea();
 });
 
+// Created 2 global variables as these variables will be used in almost all functions
+let gameArea = document.getElementById("game-area");
+let controlsArea = document.getElementsByClassName("button");
+
+
 /**
  * Once the user initiates the game, this will create a username input area and a button
  * to confirm the users selection.
@@ -12,9 +17,8 @@ document.getElementById("start-button").addEventListener("click", function(event
 function createUsernameArea() {
 
     // Create username input area
-    let usernameArea = document.getElementById("game-area");
-    usernameArea.style.textAlign = "center";
-    usernameArea.innerHTML = `
+    gameArea.style.textAlign = "center";
+    gameArea.innerHTML = `
         <form method="POST" action="">
         <label for="username">Please create a Username:</label>
         <input type="text" id="username" name="username" placeholder="">
@@ -25,8 +29,7 @@ function createUsernameArea() {
     usernameInput.style.height = "1.8em";
     
     // Create username selection button
-    let button = document.getElementsByClassName("button");
-    button[0].innerHTML = `
+    controlsArea[0].innerHTML = `
         <button id="confirm-username" type="submit">Done</button>
     `;
 
@@ -60,8 +63,7 @@ function confirmUsername() {
         }
 
     // Create username preview area and add style
-    let usernamePreview = document.getElementById("game-area");
-    usernamePreview.innerHTML = ` 
+    gameArea.innerHTML = ` 
         <p>You have selected <span id="username-display">${username.value}</span> as your Username</p>
         `;
 
@@ -70,11 +72,10 @@ function confirmUsername() {
     
 
     // Create confirmation and correction buttons, and add style
-    let button = document.getElementsByClassName("button");
-        button[0].innerHTML = `
-            <button id="final-confirm-username" type="submit">Confirm</button>
-            <button id="re-enter-username" type="submit">Re-Enter</button>
-            `;
+    controlsArea[0].innerHTML = `
+        <button id="final-confirm-username" type="submit">Confirm</button>
+        <button id="re-enter-username" type="submit">Re-Enter</button>
+        `;
     
     let confirmUsername = document.getElementById("final-confirm-username");
     confirmUsername.style.marginRight = "5vw";
@@ -104,9 +105,8 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     let currentQuestion =  selectQuestion(topic, questionNumber, correctScore, username);
 
     // Display and style the game question
-    let questionArea = document.getElementById("game-area");
-    questionArea.style.width = "60%";
-    questionArea.innerHTML = `
+    gameArea.style.width = "60%";
+    gameArea.innerHTML = `
     <p id="question"> ${currentQuestion.question}</p>
     <div>
         <form method="POST" action="">
@@ -131,8 +131,7 @@ function displayQuestion(topic, username, questionNumber, correctScore, inCorrec
     form[0].style.textAlign = "left";
     
     // Display and style username, score count and check answer button
-    let button = document.getElementsByClassName("button");
-    button[0].innerHTML = `
+    controlsArea[0].innerHTML = `
         <p id="display-username" class="logo-style">
             ${username}
         </p>
@@ -324,15 +323,13 @@ function checkAnswer() {
 function selectTopic(username) {
 
     // Display topic selector and buttons
-    let chooseTopic = document.getElementById("game-area");
-    chooseTopic.innerHTML = `
+    gameArea.innerHTML = `
         <p>
             Which Topic are you interested in <span class="logo-style">${username}</span> ?
         </p>
     `;
 
-    let button = document.getElementsByClassName("button");
-    button[0].innerHTML = `
+    controlsArea[0].innerHTML = `
         <button id="movies" type="submit">Movies</button>
         <button id="general-knowledge" type="submit">General Knowledge</button>
         <button id="science" type="submit">Science</button>
@@ -371,8 +368,7 @@ function selectTopic(username) {
 function endGame(correctScore, questionNumber, username) {
 
     // Display and style thank you message, final score and button
-    let endGameArea = document.getElementById("game-area");
-    endGameArea.innerHTML = `
+    gameArea.innerHTML = `
         <p>
             Thank you <span class="logo-style">${username}</span> for playing <span class="logo-style">Random Trivia</span>
              <i class="far fa-question-circle"></i>
@@ -380,8 +376,7 @@ function endGame(correctScore, questionNumber, username) {
     
     `;
 
-    let scoreAndNewGame = document.getElementsByClassName("button");
-    scoreAndNewGame[0].innerHTML = `
+    controlsArea[0].innerHTML = `
         <p id="result">You scored <span class="logo-style">${correctScore}</span> out of
         <span class="logo-style">${questionNumber}</span>.</p>
         <button id="start-new-game" type="submit">Start a new game</button>
@@ -406,15 +401,13 @@ function endGame(correctScore, questionNumber, username) {
 function correctAnswer(currentAnswer, username, topic, questionNumber, correctScore, inCorrectScore) {
 
     // Display message and create continue button
-    let correctDisplay = document.getElementById("game-area");
-    correctDisplay.innerHTML = `
+    gameArea.innerHTML = `
         <p>
             Well Done <span class="logo-style">${username}</span>, "${currentAnswer}" is the correct answer!
         </p>
     `;
     
-    let continueOption = document.getElementsByClassName("button");
-    continueOption[0].innerHTML = `
+    controlsArea[0].innerHTML = `
         <button id="continue" type="submit">Continue</button>
     `;
 
@@ -436,15 +429,13 @@ function correctAnswer(currentAnswer, username, topic, questionNumber, correctSc
 function inCorrectAnswer(correctAnswer, username, topic, questionNumber, correctScore, inCorrectScore) {
 
     // Display message and create continue button
-    let inCorrectDisplay = document.getElementById("game-area");
-    inCorrectDisplay.innerHTML = `
+    gameArea.innerHTML = `
         <p>
             Unfortunately <span class="logo-style">${username}</span>, "${correctAnswer}" was the correct answer!
         </p>
     `;
     
-    let continueOption = document.getElementsByClassName("button");
-    continueOption[0].innerHTML = `
+    controlsArea[0].innerHTML = `
         <button id="continue" type="submit">Continue</button>
     `;
 
